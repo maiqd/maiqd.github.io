@@ -1,0 +1,35 @@
+---
+description: Hand-drawn design system — apply when designing or styling UI
+globs: _sass/**/*,_includes/**/*.html,_layouts/**/*.html,assets/css/**/*,index.html,design/**/*
+alwaysApply: false
+---
+
+# Hand-drawn UI design (scoped)
+
+**Source of truth:** `design/design-system.md`
+
+**Stack:** Jekyll site — SCSS in `_sass/`, markup in `_includes/` and `_layouts/`, entry `index.html`. Map tokens to SCSS variables; do not introduce React/Tailwind unless the user asks to migrate.
+
+## When this rule applies
+
+- Designing, styling, or refactoring visual UI (layout, typography, color, motion, components)
+- User explicitly asks for hand-drawn / design-system work
+
+**Do not apply** to `_config.yml`, content-only edits, analytics, build tooling, or non-visual changes.
+
+## Non-negotiables
+
+- Wobbly borders: irregular `border-radius` (multiple values), not uniform `rounded-*` alone
+- Hard offset shadows: `4px 4px 0px #2d2d2d` — no soft blur shadows
+- Colors: paper `#fdfbf7`, pencil `#2d2d2d`, muted `#e5e0d8`, accent `#ff4d4d`, pen `#2d5da1`
+- Fonts: Kalam (headings), Patrick Hand (body)
+- Playful rotation (`-2deg` to `2deg`), dashed borders for secondary elements
+- Mobile-first; hide heavy decorations on small screens (`hidden md:block`)
+- Accessibility: touch targets ≥ 48px, contrast, focus states (blue ring, wobbly border)
+
+## Workflow
+
+1. Read existing `_sass/` partials and skin before changing styles
+2. Propose a short plan (tokens → partials → includes)
+3. Match existing file structure and naming; keep diffs minimal
+4. Prefer deliberate, human sketch aesthetic over generic Bootstrap polish
