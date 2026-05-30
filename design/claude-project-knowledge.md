@@ -8,7 +8,7 @@ Styling, layout, components, visual refactors — not config or content-only edi
 
 ## Stack
 
-Jekyll: `_sass/*.scss`, `_includes/*.html`, `_layouts/*.html`.
+Static: `styles/*.scss`, `index.html`. Compile CSS with `npm run build:css`.
 
 ## Style
 

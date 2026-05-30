@@ -1,6 +1,6 @@
 ---
 description: Organic / Natural design system — apply when designing or styling UI
-globs: _sass/**/*,_includes/**/*.html,_layouts/**/*.html,assets/css/**/*,index.html,design/**/*
+globs: styles/**/*,assets/css/**/*,index.html,design/**/*
 alwaysApply: false
 ---
 
@@ -8,7 +8,7 @@ alwaysApply: false
 
 **Source of truth:** `design/design-system.md`
 
-**Stack:** Jekyll — SCSS in `_sass/`, markup in `_includes/` and `_layouts/`. Map tokens to SCSS variables/mixins; match existing partials and skins. Do not add React/Tailwind unless the user requests a migration.
+**Stack:** Static site — SCSS in `styles/` (`_tokens.scss` + partials), markup in `index.html`. Run `npm run build:css` after SCSS edits. Do not add React/Tailwind unless the user requests a migration.
 
 ## When this applies
 
@@ -37,6 +37,6 @@ alwaysApply: false
 
 ## Workflow
 
-1. Read `_sass/` partials and active skin before editing
+1. Read `styles/_tokens.scss` and related partials before editing
 2. Plan: tokens → partials → includes
 3. Use blob backgrounds, staggered grids, section tints (stone/sand/moss/terracotta) for depth — avoid generic Bootstrap polish

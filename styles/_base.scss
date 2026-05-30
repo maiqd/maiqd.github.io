@@ -1,0 +1,60 @@
+body {
+  font-family: $font-body;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: $color-foreground;
+  background-color: $color-background;
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.04;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.site-main {
+  width: min(100% - 2rem, $max-width-wide);
+  margin-inline: auto;
+  padding-block: $space-section 4rem;
+}
+
+.site-placeholder {
+  max-width: $max-width-content;
+  padding: 2rem;
+  background: $color-card;
+  border: 1px solid rgba($color-border, 0.5);
+  border-radius: $radius-2xl;
+  box-shadow: $shadow-moss;
+}
+
+.site-placeholder h1 {
+  font-family: $font-heading;
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+}
+
+.site-placeholder .tagline {
+  font-weight: 600;
+  color: $color-primary;
+  margin-bottom: 1rem;
+}
+
+.site-placeholder p {
+  color: $color-muted-foreground;
+}
+
+.site-placeholder p + p {
+  margin-top: 0.75rem;
+}
+
+.site-placeholder code {
+  font-size: 0.9em;
+}

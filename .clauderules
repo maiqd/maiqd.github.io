@@ -1,6 +1,6 @@
 # Claude — UI design only
 
-Apply **only** when designing, styling, or refactoring visual UI for this Jekyll site.
+Apply **only** when designing, styling, or refactoring visual UI for this static site.
 
 ## Do not apply when
 
@@ -20,7 +20,7 @@ Upload:
 
 ## Stack
 
-SCSS (`_sass/`), HTML includes (`_includes/`, `_layouts/`). Map tokens to SCSS; match partials and skins.
+SCSS (`styles/`, start with `_tokens.scss`), HTML (`index.html`). Run `npm run build:css` after SCSS changes.
 
 ## Essentials
 

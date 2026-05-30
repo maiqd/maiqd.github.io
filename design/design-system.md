@@ -202,4 +202,4 @@ Use these files **only** when designing, styling, or refactoring visual UI — n
 
 **Source of truth:** this file (`design/design-system.md`).
 
-**This repo’s stack:** Jekyll, SCSS (`_sass/`), HTML includes — map tokens to SCSS, not React/Tailwind, unless migrating stack.
+**This repo’s stack:** Static HTML, SCSS (`styles/` → `npm run build:css`), committed `assets/css/main.css`. Map tokens to SCSS; not React/Tailwind unless migrating stack.

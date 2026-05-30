@@ -7,7 +7,7 @@ Apply **only** when designing, styling, or building visual UI for this site.
 ## Activation
 
 - User asks to design UI, apply the design system, or change look and feel
-- Editing: `_sass/**`, `_includes/**`, `_layouts/**`, `assets/css/**`, `index.html`, `design/**`
+- Editing: `styles/**`, `assets/css/**`, `index.html`, `design/**`
 
 ## Source of truth
 
@@ -15,8 +15,8 @@ Read `design/design-system.md` before UI changes. Style: **Organic / Natural** (
 
 ## Stack
 
-Jekyll + SCSS + HTML includes. Map tokens to SCSS; match `_sass/_base.scss` and skins.
+Static HTML + SCSS (`styles/` → `npm run build:css`). Map tokens to `styles/_tokens.scss`.
 
 ## File-scoped rule
 
-Follow `.cursor/rules/design-ui.mdc` on UI paths (auto-attached via globs). Use @Codebase on `_sass/`, `_includes/`, `_layouts/` for component context.
+Follow `.cursor/rules/design-ui.mdc` on UI paths (auto-attached via globs).

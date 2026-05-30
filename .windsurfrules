@@ -5,7 +5,7 @@ Apply **only** when designing, styling, or building visual UI.
 ## Activation
 
 - User requests design system, styling, or layout/visual changes
-- Files: `_sass/**`, `_includes/**`, `_layouts/**`, `assets/css/**`, `index.html`, `design/**`
+- Files: `styles/**`, `assets/css/**`, `index.html`, `design/**`
 
 ## Do not apply
 
@@ -17,7 +17,7 @@ Config, content-only, analytics, or non-visual paths.
 
 ## Stack
 
-Jekyll + SCSS + HTML includes. Tokens → `_sass/` variables; preserve skin/partial structure.
+Static HTML + SCSS. Tokens → `styles/_tokens.scss`; run `npm run build:css` after SCSS edits.
 
 ## Constraints
 

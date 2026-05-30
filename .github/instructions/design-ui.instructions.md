@@ -1,6 +1,6 @@
 ---
 description: Organic / Natural design system for UI files only
-applyTo: "_sass/**/*.scss,_sass/**/*.sass,_includes/**/*.html,_layouts/**/*.html,assets/css/**,index.html,design/**"
+applyTo: "styles/**/*.scss,styles/**/*.sass,assets/css/**,index.html,design/**"
 ---
 
 # Organic / Natural UI (path-scoped)
@@ -15,7 +15,7 @@ Do **not** use for `_config.yml`, copy-only markdown, or tooling.
 
 ## Stack
 
-Jekyll resume site: SCSS in `_sass/`, HTML in `_includes/` and `_layouts/`. Implement tokens as SCSS variables/mixins; extend skins under `_sass/skins/`.
+Static site: SCSS in `styles/` (`_tokens.scss`, partials), HTML in `index.html`. Compile with `npm run build:css` → `assets/css/main.css`.
 
 ## Philosophy
 
