@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clean vs. Vertical Slice Architecture · Learn · Mai QD</title>
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,400&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/learn.css">
+</head>
+<body class="learn-page learn-article">
+
+    <!-- Ambient Visual Elements -->
+    <div class="ambient-blob blob-1"></div>
+    <div class="ambient-blob blob-2"></div>
+
+    <div class="container">
+        
+        <nav class="learn-nav" aria-label="Learn and page sections">
+            <div class="learn-nav__pill">
+                <div class="learn-nav__row">
+                    <a class="learn-nav__brand" href="/">Mai QD</a>
+                    <span class="learn-nav__sep" aria-hidden="true">/</span>
+                    <a class="learn-nav__brand" href="/learn/">Learn</a>
+                    <span class="learn-nav__sep" aria-hidden="true">/</span>
+                    <span class="learn-nav__article">Clean vs. Vertical Slice</span>
+                </div>
+                <div class="learn-nav__row">
+                    <ul class="learn-nav__sections">
+                        <li><a href="#overview-sec" class="learn-nav__link" data-section="overview-sec">Overview</a></li>
+                        <li><a href="#video-sec" class="learn-nav__link" data-section="video-sec">Video</a></li>
+                        <li><a href="#takeaways-sec" class="learn-nav__link" data-section="takeaways-sec">Insights</a></li>
+                        <li><a href="#quiz-sec" class="learn-nav__link" data-section="quiz-sec">Quiz</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <header id="overview-sec" class="learn-section">
+            <h1>Architectural <em>Sanctuary</em></h1>
+            <div class="subtitle">A serene space mapping out Clean vs. Vertical Slice Architecture. Let your designs breathe.</div>
+            <div class="author-tag">
+                Inspired by Steve Smith (Ardalis): &ldquo;Nick Chapsas Is Right About Clean Architecture (Mostly)&rdquo;
+            </div>
+        </header>
+
+        <main class="layout-grid">
+            
+            <!-- Left Column: Instructional Media and Architecture Documents -->
+            <section id="takeaways-sec" class="learn-section">
+                <!-- Premium Media Container Card -->
+                <div id="video-sec" class="video-wrapper learn-section">
+                    <div class="video-container">
+                        <iframe id="yt-player" src="https://www.youtube.com/embed/Z0JpNexRxvs?enablejsapi=1" title="Nick Chapsas Is Right About Clean Architecture (Mostly)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-caption">📍 Click timeline checkpoints below to jump inside the lecture</div>
+                </div>
+
+                <!-- Asymmetric Architecture Card (Left curve accent) -->
+                <div class="organic-card card-left">
+                    <div class="tab-btn-group" role="tablist">
+                        <button class="tab-btn active" role="tab" aria-selected="true" onclick="switchTab('takeaways')">🌿 Core Principles</button>
+                        <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab('timestamps')">⏱ Milestones</button>
+                        <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab('philosophy')">🏺 The Balance</button>
+                    </div>
+
+                    <!-- Takeaways Tab Content -->
+                    <div id="tab-takeaways" class="tab-content active" role="tabpanel">
+                        <h2 class="section-title">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10M6 10h10"/></svg>
+                            Key Architect Insights
+                        </h2>
+                        <ul class="bullet-list">
+                            <li><strong>The Core of Clean Architecture:</strong> Keeping core business Domain rules completely decoupled from external UI, databases, and third-party framework details.</li>
+                            <li><strong>The 1-to-1 Interface Trap:</strong> Creating interfaces for literally every single service (e.g. <code>IUserService</code> for only one <code>UserService</code>) is often unnecessary overhead unless mocked dynamically in unit tests.</li>
+                            <li><strong>Vertical Slice Alternative:</strong> Group files by business features (e.g., <code>Features/Orders/CreateOrder.cs</code>) rather than logical layers. Features operate independently and bypass rigid multi-tiered abstraction if overkill.</li>
+                            <li><strong>MediatR & REPR:</strong> MediatR is useful for decoupling vertical handler flows, but you can achieve modular architecture safely using direct <em>Request-Endpoint-Response (REPR)</em> structures.</li>
+                            <li><strong>The Hybrid Approach:</strong> Combine templates! Use modular monolith boundaries for clean domains, but leverage feature slices internally for optimal speed.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Timestamps Tab Content -->
+                    <div id="tab-timestamps" class="tab-content" role="tabpanel">
+                        <h2 class="section-title">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            Timeline Checkpoints
+                        </h2>
+                        <p style="font-size: 1.1rem; margin-top: -0.5rem; font-style: italic; color: var(--muted-foreground); margin-bottom: 2rem;">Click a timestamp badge to seek the media directly to that moment.</p>
+                        <ul class="timeline-list">
+                            <li>
+                                <span class="timestamp-badge" onclick="seekVideo(0)">00:00</span>
+                                <strong>Intro & Context:</strong> Responding to Nick Chapsas's critique of architecture templates.
+                            </li>
+                            <li>
+                                <span class="timestamp-badge" onclick="seekVideo(195)">03:15</span>
+                                <strong>Clean Architecture Core:</strong> Visualizing dependency flow and why decoupling matters.
+                            </li>
+                            <li>
+                                <span class="timestamp-badge" onclick="seekVideo(525)">08:45</span>
+                                <strong>The Interface Antipattern:</strong> Explaining why 1-to-1 interfaces dilute architecture value.
+                            </li>
+                            <li>
+                                <span class="timestamp-badge" onclick="seekVideo(860)">14:20</span>
+                                <strong>Vertical Slices Defined:</strong> Visualizing features as distinct, horizontal slices.
+                            </li>
+                            <li>
+                                <span class="timestamp-badge" onclick="seekVideo(1195)">19:55</span>
+                                <strong>MediatR vs REPR:</strong> Simplifying APIs with FastEndpoints and Minimal APIs.
+                            </li>
+                            <li>
+                                <span class="timestamp-badge" onclick="seekVideo(1420)">23:40</span>
+                                <strong>Cohesion vs Coupling:</strong> Steve's ultimate summary on balancing speed and design cleanlines.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Philosophy Tab Content -->
+                    <div id="tab-philosophy" class="tab-content" role="tabpanel">
+                        <h2 class="section-title">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            The Balancing Act
+                        </h2>
+                        <p>
+                            Software developers are caught in an eternal cycle of balancing <strong>Architecture Velocity</strong> against <strong>Future-Proofing</strong>.
+                        </p>
+                        <div class="clay-callout">
+                            <strong>Steve Smith's Reflection:</strong><br>
+                            <em>&ldquo;Clean Architecture has higher upfront costs but offers lower long-term maintenance friction. Vertical Slices grant rapid initial velocity but require strict logical boundaries to prevent spaghetti code as domains expand.&rdquo;</em>
+                        </div>
+                        <p>
+                            Choosing the correct blueprint should not be a dogmatic battle. Real-world solutions prioritize decoupling hot path workflows into high-velocity modules while preserving a clean core domain.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Column: Premium Architectural Assessment Module -->
+            <section id="quiz-sec" class="learn-section">
+                <div id="quiz-card" class="organic-card card-right" style="min-height: 580px; display: flex; flex-direction: column; justify-content: space-between;">
+                    
+                    <!-- Main Quiz Wrapper -->
+                    <div id="quiz-container">
+                        <div class="quiz-intro">
+                            <div class="quiz-title">📐 Check Your Design Instincts</div>
+                            <p style="text-align: center; color: var(--muted-foreground); margin: 0;">Validate your domain design choices using our integrated 15-question architectural checkup.</p>
+                            <div class="divider"></div>
+                        </div>
+
+                        <!-- Question 1 -->
+                        <div class="question-box active" id="q-0">
+                            <span class="question-num">Question 1 of 15</span>
+                            <div class="question-text">What is the central focus or primary layer of Clean Architecture according to Steve Smith?</div>
+                            <div class="options-list" role="radiogroup">
+                                <div class="option-item" tabindex="0" onclick="selectOption(0, 0)">
+                                    <div class="radio-circle"></div>
+                                    <span>The Database (Infrastructure Layer)</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(0, 1)">
+                                    <div class="radio-circle"></div>
+                                    <span>The Core Business Domain rules (Domain Layer)</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(0, 2)">
+                                    <div class="radio-circle"></div>
+                                    <span>The UI Controller endpoints (Presentation Layer)</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(0, 3)">
+                                    <div class="radio-circle"></div>
+                                    <span>The Third-Party API clients</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 2 -->
+                        <div class="question-box" id="q-1">
+                            <span class="question-num">Question 2 of 15</span>
+                            <div class="question-text">Vertical Slice Architecture advocates for grouping file structures by logical layers (Controllers, Repositories) rather than feature workflows.</div>
+                            <div class="options-list" role="radiogroup">
+                                <div class="option-item" tabindex="0" onclick="selectOption(1, 0)">
+                                    <div class="radio-circle"></div>
+                                    <span>True</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(1, 1)">
+                                    <div class="radio-circle"></div>
+                                    <span>False</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 3 -->
+                        <div class="question-box" id="q-2">
+                            <span class="question-num">Question 3 of 15</span>
+                            <div class="question-text">What does the design pattern acronym "REPR" stand for as discussed in the context of Minimal APIs?</div>
+                            <div class="options-list" role="radiogroup">
+                                <div class="option-item" tabindex="0" onclick="selectOption(2, 0)">
+                                    <div class="radio-circle"></div>
+                                    <span>Repository-Entity-Processor-Repository</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(2, 1)">
+                                    <div class="radio-circle"></div>
+                                    <span>Request-Endpoint-Response</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(2, 2)">
+                                    <div class="radio-circle"></div>
+                                    <span>Redirect-Execution-Parameter-Return</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(2, 3)">
+                                    <div class="radio-circle"></div>
+                                    <span>Remote-Entity-Proxy-Route</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 4 -->
+                        <div class="question-box" id="q-3">
+                            <span class="question-num">Question 4 of 15</span>
+                            <div class="question-text">Does Steve Smith (Ardalis) agree that always creating a matching Interface for every single internal Service class can become unnecessary boilerplate?</div>
+                            <div class="options-list" role="radiogroup">
+                                <div class="option-item" tabindex="0" onclick="selectOption(3, 0)">
+                                    <div class="radio-circle"></div>
+                                    <span>Yes, he mostly agrees it's overused boilerplate.</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(3, 1)">
+                                    <div class="radio-circle"></div>
+                                    <span>No, he insists interfaces are mandatory for every class.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 5 -->
+                        <div class="question-box" id="q-4">
+                            <span class="question-num">Question 5 of 15</span>
+                            <div class="question-text">What architectural style organizes cohesive features into isolated modules inside a single process/executable to ease scaling boundaries?</div>
+                            <div class="options-list" role="radiogroup">
+                                <div class="option-item" tabindex="0" onclick="selectOption(4, 0)">
+                                    <div class="radio-circle"></div>
+                                    <span>Spaghetti Architecture</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(4, 1)">
+                                    <div class="radio-circle"></div>
+                                    <span>Layered DB-First Setup</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(4, 2)">
+                                    <div class="radio-circle"></div>
+                                    <span>Modular Monolith</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(4, 3)">
+                                    <div class="radio-circle"></div>
+                                    <span>Strict Desktop Single Client</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 6 -->
+                        <div class="question-box" id="q-5">
+                            <span class="question-num">Question 6 of 15</span>
+                            <div class="question-text">Why do developers frequently create a 1-to-1 interface relationship for internal services?</div>
+                            <div class="options-list" role="radiogroup">
+                                <div class="option-item" tabindex="0" onclick="selectOption(5, 0)">
+                                    <div class="radio-circle"></div>
+                                    <span>To satisfy direct database execution performance checks</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(5, 1)">
+                                    <div class="radio-circle"></div>
+                                    <span>Because compilers fail without matching interfaces</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(5, 2)">
+                                    <div class="radio-circle"></div>
+                                    <span>Under the false assumption that all unit testing requires mocking every single layer</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(5, 3)">
+                                    <div class="radio-circle"></div>
+                                    <span>To support multiple cloud databases simultaneously</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 7 -->
+                        <div class="question-box" id="q-6">
+                            <span class="question-num">Question 7 of 15</span>
+                            <div class="question-text">In a traditional 3-tier Layered Architecture, which component acts as the foundational root that other tiers depend on?</div>
+                            <div class="options-list" role="radiogroup">
+                                <div class="option-item" tabindex="0" onclick="selectOption(6, 0)">
+                                    <div class="radio-circle"></div>
+                                    <span>The Core Business Entities</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(6, 1)">
+                                    <div class="radio-circle"></div>
+                                    <span>The UI Presentation Component</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(6, 2)">
+                                    <div class="radio-circle"></div>
+                                    <span>The Database / Infrastructure Schema</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(6, 3)">
+                                    <div class="radio-circle"></div>
+                                    <span>The Identity Provider microservice</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 8 -->
+                        <div class="question-box" id="q-7">
+                            <span class="question-num">Question 8 of 15</span>
+                            <div class="question-text">Which component/design guideline suggests that "classes that change together should be packaged together"?</div>
+                            <div class="options-list" role="radiogroup">
+                                <div class="option-item" tabindex="0" onclick="selectOption(7, 0)">
+                                    <div class="radio-circle"></div>
+                                    <span>Liskov Substitution Principle</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(7, 1)">
+                                    <div class="radio-circle"></div>
+                                    <span>Common Closure Principle</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(7, 2)">
+                                    <div class="radio-circle"></div>
+                                    <span>Open-Closed Principle</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(7, 3)">
+                                    <div class="radio-circle"></div>
+                                    <span>Interface Segregation Principle</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 9 -->
+                        <div class="question-box" id="q-8">
+                            <span class="question-num">Question 9 of 15</span>
+                            <div class="question-text">What is the primary role of using the MediatR library within an API endpoint?</div>
+                            <div class="options-list" role="radiogroup">
+                                <div class="option-item" tabindex="0" onclick="selectOption(8, 0)">
+                                    <div class="radio-circle"></div>
+                                    <span>To map relational SQL data tables to entities</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(8, 1)">
+                                    <div class="radio-circle"></div>
+                                    <span>To decouple controllers from their specific execution handlers</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(8, 2)">
+                                    <div class="radio-circle"></div>
+                                    <span>To automate API key validation steps</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(8, 3)">
+                                    <div class="radio-circle"></div>
+                                    <span>To scale network socket gateways</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 10 -->
+                        <div class="question-box" id="q-9">
+                            <span class="question-num">Question 10 of 15</span>
+                            <div class="question-text">What is a major risk of Vertical Slice Architecture if cross-feature boundaries are left unmonitored?</div>
+                            <div class="options-list" role="radiogroup">
+                                <div class="option-item" tabindex="0" onclick="selectOption(9, 0)">
+                                    <div class="radio-circle"></div>
+                                    <span>High, bloated initial project configurations</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(9, 1)">
+                                    <div class="radio-circle"></div>
+                                    <span>Inability to utilize modern SQL frameworks</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(9, 2)">
+                                    <div class="radio-circle"></div>
+                                    <span>Code degrading into tight spaghetti dependencies across features</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(9, 3)">
+                                    <div class="radio-circle"></div>
+                                    <span>Slower CPU initialization during deployment bootups</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 11 -->
+                        <div class="question-box" id="q-10">
+                            <span class="question-num">Question 11 of 15</span>
+                            <div class="question-text">Which of the following describes a direct advantage of core Domain isolation?</div>
+                            <div class="options-list" role="radiogroup">
+                                <div class="option-item" tabindex="0" onclick="selectOption(10, 0)">
+                                    <div class="radio-circle"></div>
+                                    <span>It facilitates rapid direct layout coding speeds</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(10, 1)">
+                                    <div class="radio-circle"></div>
+                                    <span>Business rules can be fully unit-tested independently without mocking infrastructure</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(10, 2)">
+                                    <div class="radio-circle"></div>
+                                    <span>It couples DB connections straight into UI views</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(10, 3)">
+                                    <div class="radio-circle"></div>
+                                    <span>It skips logic patterns to ship endpoints instantly</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 12 -->
+                        <div class="question-box" id="q-11">
+                            <span class="question-num">Question 12 of 15</span>
+                            <div class="question-text">In a Modular Monolith, how should modules ideally interact to preserve boundaries?</div>
+                            <div class="options-list" role="radiogroup">
+                                <div class="option-item" tabindex="0" onclick="selectOption(11, 0)">
+                                    <div class="radio-circle"></div>
+                                    <span>By executing cross-database joins directly</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(11, 1)">
+                                    <div class="radio-circle"></div>
+                                    <span>By querying standard private local helper classes</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(11, 2)">
+                                    <div class="radio-circle"></div>
+                                    <span>By utilizing public interfaces or in-memory messaging events</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(11, 3)">
+                                    <div class="radio-circle"></div>
+                                    <span>They must avoid talking to each other altogether</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 13 -->
+                        <div class="question-box" id="q-12">
+                            <span class="question-num">Question 13 of 15</span>
+                            <div class="question-text">What does the term "Architecture Velocity" refer to in project life-cycles?</div>
+                            <div class="options-list" role="radiogroup">
+                                <div class="option-item" tabindex="0" onclick="selectOption(12, 0)">
+                                    <div class="radio-circle"></div>
+                                    <span>The network request speeds of backend setups</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(12, 1)">
+                                    <div class="radio-circle"></div>
+                                    <span>The sustainable rate at which teams can release clean business features over time</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(12, 2)">
+                                    <div class="radio-circle"></div>
+                                    <span>The speed of automated compiler packaging procedures</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(12, 3)">
+                                    <div class="radio-circle"></div>
+                                    <span>The database query execution velocity measurements</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 14 -->
+                        <div class="question-box" id="q-13">
+                            <span class="question-num">Question 14 of 15</span>
+                            <div class="question-text">Why might an architect design a "hybrid model" fanning aspects of Clean and Slice styles?</div>
+                            <div class="options-list" role="radiogroup">
+                                <div class="option-item" tabindex="0" onclick="selectOption(13, 0)">
+                                    <div class="radio-circle"></div>
+                                    <span>To intentionally degrade network routing protocols</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(13, 1)">
+                                    <div class="radio-circle"></div>
+                                    <span>To shield complex Core rules safely while processing request payloads with highly focused slices</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(13, 2)">
+                                    <div class="radio-circle"></div>
+                                    <span>To satisfy contradictory external vendor agreements</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(13, 3)">
+                                    <div class="radio-circle"></div>
+                                    <span>Because their frameworks mandate strict layered structures</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 15 -->
+                        <div class="question-box" id="q-14">
+                            <span class="question-num">Question 15 of 15</span>
+                            <div class="question-text">Nick Chapsas is "mostly right" according to Steve. What is the key critique they both align on?</div>
+                            <div class="options-list" role="radiogroup">
+                                <div class="option-item" tabindex="0" onclick="selectOption(14, 0)">
+                                    <div class="radio-circle"></div>
+                                    <span>That Clean Architecture offers no long-term value whatsoever</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(14, 1)">
+                                    <div class="radio-circle"></div>
+                                    <span>That rigid Clean Architecture templates frequently introduce excessive boilerplate projects and redundant abstractions</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(14, 2)">
+                                    <div class="radio-circle"></div>
+                                    <span>That database concerns should be positioned in the center</span>
+                                </div>
+                                <div class="option-item" tabindex="0" onclick="selectOption(14, 3)">
+                                    <div class="radio-circle"></div>
+                                    <span>That developers should avoid writing modular boundaries entirely</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Soft Tinted Live Feedback Panel -->
+                        <div id="feedback-panel" class="quiz-feedback">
+                            <strong style="font-family: 'Fraunces', serif; font-size: 1.2rem; display: flex; align-items: center;" id="feedback-title">Result:</strong>
+                            <p style="margin: 0.6rem 0 0 0; font-size: 1.05rem;" id="feedback-text"></p>
+                        </div>
+
+                        <!-- Control Action Row -->
+                        <div class="btn-row">
+                            <button id="btn-prev" class="btn-organic btn-secondary-style" onclick="prevQuestion()" disabled>
+                                <span>← Back</span>
+                            </button>
+                            <span id="quiz-progress-text" style="font-weight: 700; color: var(--muted-foreground); font-size: 0.95rem;">
+                                Question 1/15
+                            </span>
+                            <button id="btn-next" class="btn-organic" onclick="nextQuestion()">
+                                <span>Next →</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Elegant Assessment Final Screen -->
+                    <div id="results-container" class="results-box">
+                        <div style="font-family: 'Fraunces', serif; font-size: 2.4rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem; letter-spacing: -0.02em;">
+                            Assessment Complete
+                        </div>
+                        <p style="color: var(--muted-foreground); margin: 0;">You have successfully completed the architectural checkup.</p>
+                        
+                        <div class="score-display-ring">
+                            <span class="score-num" id="final-score">0/15</span>
+                            <span class="score-label">Correct</span>
+                        </div>
+
+                        <div class="commentary" id="score-commentary">
+                            Review the core domains and retry whenever you are ready.
+                        </div>
+
+                        <button class="btn-organic" style="margin-top: 1rem;" onclick="resetQuiz()">
+                            🔄 Reset Assessment
+                        </button>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>Designed on the principles of **Wabi-Sabi** — embracing organic asymmetric curves, peaceful whitespace rhythms, and tactile physical feedback.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="/assets/js/learn-nav.js" defer></script>
+    <script>
+        // Full 15 Questions Database
+        const quizData = [
+            {
+                correctIndex: 1,
+                explanation: "The core layer of Clean Architecture is always the Domain containing core entities, types, and business rules, thoroughly isolated from infrastructure details.",
+                points: 1
+            },
+            {
+                correctIndex: 1, // False
+                explanation: "Vertical Slice Architecture explicitly groups files by cohesive business feature workflows rather than dividing them across logical horizontal tiers.",
+                points: 1
+            },
+            {
+                correctIndex: 1, // Request-Endpoint-Response
+                explanation: "REPR stands for Request-Endpoint-Response. It models an API action as a simple straight-through pipeline instead of bloated horizontal layers.",
+                points: 1
+            },
+            {
+                correctIndex: 0, // Yes
+                explanation: "Steve agrees that maintaining matching interfaces for every single internal Service class is over-engineering unless required for unit testing mock instances.",
+                points: 1
+            },
+            {
+                correctIndex: 2, // Modular Monolith
+                explanation: "Modular Monolith organizes cohesive features into isolated modules inside a single process, making transitions to future microservices extremely easy.",
+                points: 1
+            },
+            {
+                correctIndex: 2, // Question 6
+                explanation: "Developers often generate 1-to-1 interfaces under the false belief that every single service class must be mocked or heavily abstracted.",
+                points: 1
+            },
+            {
+                correctIndex: 2, // Question 7
+                explanation: "In traditional layered structures, the database acts as the architectural foundation, coupling all business logic directly to physical database schemas.",
+                points: 1
+            },
+            {
+                correctIndex: 1, // Question 8
+                explanation: "The Common Closure Principle (CCP) suggests grouping classes that change together, representing the primary driving force of Vertical Slice designs.",
+                points: 1
+            },
+            {
+                correctIndex: 1, // Question 9
+                explanation: "MediatR decouples API endpoints from handling execution code by sending requests through an in-process mediator container pipeline.",
+                points: 1
+            },
+            {
+                correctIndex: 2, // Question 10
+                explanation: "Without strict boundary configurations, developers can accidentally link internal feature codes, degrading features into chaotic spaghetti workflows.",
+                points: 1
+            },
+            {
+                correctIndex: 1, // Question 11
+                explanation: "By isolating the Core Domain from external DB concerns, you can execute comprehensive unit tests on core business logic rapidly without mock systems.",
+                points: 1
+            },
+            {
+                correctIndex: 2, // Question 12
+                explanation: "To maintain strong logical separation, modules should communicate strictly via clean public interfaces or structured in-memory event buses.",
+                points: 1
+            },
+            {
+                correctIndex: 1, // Question 13
+                explanation: "Architecture velocity evaluates the sustainable rate at which teams can design and deploy reliable features over the full lifespan of an application.",
+                points: 1
+            },
+            {
+                correctIndex: 1, // Question 14
+                explanation: "Fusing clean principles with vertical slices shields complex Domain rules in a clean core while processing basic request flows rapidly via feature slices.",
+                points: 1
+            },
+            {
+                correctIndex: 1, // Question 15
+                explanation: "Steve agrees that templated 'Clean Architecture' builds often introduce excessive project files and redundant abstractions.",
+                points: 1
+            }
+        ];
+
+        // State Machine
+        let currentQuestionIndex = 0;
+        let selectedAnswers = Array(quizData.length).fill(null);
+        let completed = false;
+
+        // Tabs
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+                btn.setAttribute('aria-selected', 'false');
+            });
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            
+            event.target.classList.add('active');
+            event.target.setAttribute('aria-selected', 'true');
+            document.getElementById('tab-' + tabId).classList.add('active');
+        }
+
+        // YouTube IFrame Control
+        function seekVideo(seconds) {
+            const iframe = document.getElementById('yt-player');
+            if (iframe && iframe.contentWindow) {
+                iframe.contentWindow.postMessage(JSON.stringify({
+                    event: 'command',
+                    func: 'seekTo',
+                    args: [seconds, true]
+                }), '*');
+                
+                iframe.contentWindow.postMessage(JSON.stringify({
+                    event: 'command',
+                    func: 'playVideo',
+                    args: []
+                }), '*');
+            }
+        }
+
+        // Quiz Logic
+        function selectOption(questionIdx, optionIdx) {
+            if (completed) return;
+
+            selectedAnswers[questionIdx] = optionIdx;
+            
+            const questionElement = document.getElementById(`q-${questionIdx}`);
+            const optionElements = questionElement.querySelectorAll('.option-item');
+            
+            optionElements.forEach((el, index) => {
+                if (index === optionIdx) {
+                    el.classList.add('selected');
+                } else {
+                    el.classList.remove('selected');
+                }
+            });
+
+            showExplanation(questionIdx, optionIdx);
+            updateControls();
+        }
+
+        function showExplanation(questionIdx, chosenIdx) {
+            const data = quizData[questionIdx];
+            const isCorrect = chosenIdx === data.correctIndex;
+            const feedbackPanel = document.getElementById('feedback-panel');
+            const feedbackTitle = document.getElementById('feedback-title');
+            const feedbackText = document.getElementById('feedback-text');
+
+            if (isCorrect) {
+                feedbackTitle.innerHTML = `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="vertical-align: middle; margin-right: 6px;"><path d="M20 6 9 17l-5-5"/></svg> Harmonious Design Choice`;
+                feedbackTitle.style.color = 'var(--primary)';
+                feedbackText.innerText = data.explanation;
+            } else {
+                feedbackTitle.innerHTML = `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="vertical-align: middle; margin-right: 6px;"><path d="M18 6 6 18M6 6l12 12"/></svg> Architectural Friction`;
+                feedbackTitle.style.color = 'var(--destructive)';
+                feedbackText.innerText = `Friction detected. ${data.explanation}`;
+            }
+
+            feedbackPanel.classList.add('show');
+        }
+
+        function updateControls() {
+            const prevBtn = document.getElementById('btn-prev');
+            const nextBtn = document.getElementById('btn-next');
+            const progressText = document.getElementById('quiz-progress-text');
+
+            prevBtn.disabled = currentQuestionIndex === 0;
+            progressText.innerText = `Question ${currentQuestionIndex + 1}/${quizData.length}`;
+
+            if (currentQuestionIndex === quizData.length - 1) {
+                nextBtn.innerHTML = '<span>Finish Checkup 🏁</span>';
+            } else {
+                nextBtn.innerHTML = '<span>Next →</span>';
+            }
+        }
+
+        function prevQuestion() {
+            if (currentQuestionIndex > 0) {
+                document.getElementById(`q-${currentQuestionIndex}`).classList.remove('active');
+                currentQuestionIndex--;
+                document.getElementById(`q-${currentQuestionIndex}`).classList.add('active');
+                
+                const chosen = selectedAnswers[currentQuestionIndex];
+                if (chosen !== null) {
+                    showExplanation(currentQuestionIndex, chosen);
+                } else {
+                    document.getElementById('feedback-panel').classList.remove('show');
+                }
+                updateControls();
+            }
+        }
+
+        function nextQuestion() {
+            const currentChosen = selectedAnswers[currentQuestionIndex];
+            
+            if (currentChosen === null) {
+                const feedbackPanel = document.getElementById('feedback-panel');
+                const feedbackTitle = document.getElementById('feedback-title');
+                const feedbackText = document.getElementById('feedback-text');
+                
+                feedbackTitle.innerHTML = `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="vertical-align: middle; margin-right: 6px;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0zM12 9v4M12 17h.01"/></svg> Unfinished Blueprint`;
+                feedbackTitle.style.color = 'var(--destructive)';
+                feedbackText.innerText = 'Please select a design answer before proceeding with the checkup!';
+                feedbackPanel.classList.add('show');
+                return;
+            }
+
+            if (currentQuestionIndex < quizData.length - 1) {
+                document.getElementById(`q-${currentQuestionIndex}`).classList.remove('active');
+                currentQuestionIndex++;
+                document.getElementById(`q-${currentQuestionIndex}`).classList.add('active');
+                
+                const chosen = selectedAnswers[currentQuestionIndex];
+                if (chosen !== null) {
+                    showExplanation(currentQuestionIndex, chosen);
+                } else {
+                    document.getElementById('feedback-panel').classList.remove('show');
+                }
+                updateControls();
+            } else {
+                calculateFinalAssessment();
+            }
+        }
+
+        function calculateFinalAssessment() {
+            let score = 0;
+            quizData.forEach((question, index) => {
+                if (selectedAnswers[index] === question.correctIndex) {
+                    score++;
+                }
+            });
+
+            document.getElementById('quiz-container').style.display = 'none';
+            const resultsContainer = document.getElementById('results-container');
+            resultsContainer.classList.add('active');
+
+            document.getElementById('final-score').innerText = `${score}/${quizData.length}`;
+
+            const commentaryEl = document.getElementById('score-commentary');
+            if (score === quizData.length) {
+                commentaryEl.innerText = "🏆 Perfect Structural Integrity! Your design patterns represent flawless architecture coordination.";
+            } else if (score >= 10) {
+                commentaryEl.innerText = "💡 Solid Foundation. You understand where decoupled boundaries are appropriate, and when to opt for feature speed.";
+            } else {
+                commentaryEl.innerText = "🏺 Study Phase. We recommend reviewing the checkpoints and studying Steve Smith's interface criteria.";
+            }
+
+            completed = true;
+        }
+
+        function resetQuiz() {
+            currentQuestionIndex = 0;
+            selectedAnswers = Array(quizData.length).fill(null);
+            completed = false;
+
+            document.getElementById('quiz-container').style.display = 'block';
+            document.getElementById('results-container').classList.remove('active');
+            document.getElementById('feedback-panel').classList.remove('show');
+
+            document.querySelectorAll('.option-item').forEach(el => {
+                el.classList.remove('selected', 'correct', 'incorrect');
+            });
+
+            document.querySelectorAll('.question-box').forEach((box, index) => {
+                if (index === 0) box.classList.add('active');
+                else box.classList.remove('active');
+            });
+
+            updateControls();
+        }
+    </script>
+</body>
+</html>

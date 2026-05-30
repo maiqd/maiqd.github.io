@@ -2,8 +2,8 @@
   "name": "maiqd.github.io",
   "private": true,
   "scripts": {
-    "build:css": "sass styles/main.scss assets/css/main.css --style=compressed",
-    "watch:css": "sass --watch styles/main.scss:assets/css/main.css",
+    "build:css": "sass styles/main.scss assets/css/main.css --style=compressed && sass styles/learn-pages.scss assets/css/learn.css --style=compressed",
+    "watch:css": "sass --watch styles/main.scss:assets/css/main.css styles/learn-pages.scss:assets/css/learn.css",
     "build": "npm run build:css"
   },
   "devDependencies": {

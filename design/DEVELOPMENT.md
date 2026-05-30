@@ -36,6 +36,18 @@ npx serve .
 
 Open http://localhost:3000 (serve) or :4000 (python).
 
+## Routes
+
+| URL | File |
+|-----|------|
+| `/` | `index.html` |
+| `/learn/` | `learn/index.html` (article index) |
+| `/learn/clean-vs-vertical-slice/` | `learn/clean-vs-vertical-slice/index.html` |
+
+Shared learn UI: `assets/css/learn.css` (from `styles/_learn.scss`, `styles/_learn-article.scss`), `assets/js/learn-nav.js`.
+
+Add pages as `some/path/index.html` for clean URLs without `.html`.
+
 ## Deploy
 
 Push to `main`. GitHub Pages publishes the repo as static files — no build step required if `main.css` is committed.
