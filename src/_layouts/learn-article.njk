@@ -1,0 +1,22 @@
+---
+layout: base.njk
+cssFile: learn.css
+fontUrl: "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,400&family=Nunito:wght@400;600;700&display=swap"
+navVariant: article
+---
+<body class="{{ bodyClass }}">
+{% if ambientBlobs %}
+  <div class="ambient-blob blob-1" aria-hidden="true"></div>
+  <div class="ambient-blob blob-2" aria-hidden="true"></div>
+{% endif %}
+  <div class="container">
+    {% include "nav.njk" %}
+    {{ content | safe }}
+  </div>
+  <script src="/assets/js/learn-nav.js" defer></script>
+  {% if scriptsInclude %}{% include scriptsInclude %}{% endif %}
+  {% if mermaid %}
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.0/dist/mermaid.min.js" defer></script>
+  <script src="/assets/js/learn-mermaid.js" defer></script>
+  {% endif %}
+</body>

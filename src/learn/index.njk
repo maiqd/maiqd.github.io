@@ -1,0 +1,21 @@
+---
+layout: learn-hub.njk
+title: Learn · Mai QD
+description: Notes and guides on software architecture and craft.
+permalink: /learn/index.html
+---
+<header>
+  <h1 class="learn-hub__title">Learn</h1>
+  <p class="learn-hub__intro">Sketchbook-style notes on architecture, design, and building software with care.</p>
+</header>
+
+<nav aria-label="Articles">
+  <div class="learn-hub__list">
+    {% for article in learnArticles.articles %}
+    <a class="learn-hub__card" href="{{ article.href }}">
+      <h2>{{ article.title }}</h2>
+      <p>{{ article.blurb }}</p>
+    </a>
+    {% endfor %}
+  </div>
+</nav>

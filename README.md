@@ -1,9 +1,9 @@
 # maiqd.github.io
 
-Static personal site on GitHub Pages (no Jekyll).
+Static personal site on GitHub Pages — Eleventy (`src/`) + SCSS.
 
-- **Page:** `index.html`
-- **Styles:** `styles/` → `npm run build:css` → `assets/css/main.css`
+- **Sources:** `src/` → `npm run build` → `_site/`
+- **Styles:** `styles/` → `assets/css/`
 - **Content draft:** `content/cv.yml`
 - **Design:** `design/design-system.md`
 

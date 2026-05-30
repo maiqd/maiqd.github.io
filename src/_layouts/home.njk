@@ -1,0 +1,17 @@
+---
+layout: base.njk
+cssFile: main.css
+fontUrl: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Nunito:wght@400;600&display=swap"
+navVariant: site
+navPrefix: ""
+activeSection: about
+learnActive: false
+---
+<body class="home-page">
+  <div class="site-shell">
+    {% include "nav.njk" %}
+    {% include "home-body.njk" %}
+  </div>
+  <script src="/assets/js/learn-nav.js" defer></script>
+  {% include "analytics.njk" %}
+</body>

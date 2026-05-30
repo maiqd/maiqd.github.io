@@ -1,0 +1,14 @@
+{
+  "articles": [
+    {
+      "title": "Clean vs. Vertical Slice Architecture",
+      "href": "/learn/clean-vs-vertical-slice/",
+      "blurb": "Video notes, core principles, timeline checkpoints, and a self-assessment quiz."
+    },
+    {
+      "title": "6 OpenClaw Use Cases",
+      "href": "/learn/openclaw-use-cases/",
+      "blurb": "Agent workflows, copy-paste prompts, cost tiers, flashcards, and a five-question quiz."
+    }
+  ]
+}

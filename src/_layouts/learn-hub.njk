@@ -1,0 +1,16 @@
+---
+layout: base.njk
+cssFile: learn.css
+fontUrl: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Nunito:wght@400;600&display=swap"
+navVariant: site
+navPrefix: "/"
+navAriaLabel: Site
+learnActive: true
+---
+<body class="learn-page">
+  <div class="site-shell learn-hub">
+    {% include "nav.njk" %}
+    {{ content | safe }}
+  </div>
+  <script src="/assets/js/learn-nav.js" defer></script>
+</body>

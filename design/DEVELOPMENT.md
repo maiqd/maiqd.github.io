@@ -1,6 +1,6 @@
-# Local development (static site)
+# Local development (Eleventy + SCSS)
 
-No Jekyll. GitHub Pages serves files from the repo root (`.nojekyll` disables Jekyll).
+Static site built with [Eleventy](https://www.11ty.dev/) from `src/`, deployed to GitHub Pages via GitHub Actions.
 
 ## Setup
 
@@ -8,56 +8,61 @@ No Jekyll. GitHub Pages serves files from the repo root (`.nojekyll` disables Je
 npm install
 ```
 
-## CSS
-
-Edit SCSS in `styles/`, then compile:
+## Develop
 
 ```bash
-npm run build:css    # one-off
-npm run watch:css    # watch while editing
+npm run dev      # build CSS, serve _site/ with watch (http://localhost:8080)
+npm run start    # alias for dev
 ```
 
-Commit `assets/css/main.css` after style changes so Pages works without a CI build.
+Edit templates in `src/`, styles in `styles/`. CSS recompiles on dev start; restart dev or run `npm run build:css` after SCSS edits while the server is running.
+
+## Build
+
+```bash
+npm run build:css    # SCSS → assets/css/
+npm run build:11ty   # src/ → _site/
+npm run build        # both
+```
+
+Output lands in `_site/` (gitignored). Do not commit generated HTML.
 
 ## Content
 
-| File | Role |
+| Path | Role |
 |------|------|
-| `index.html` | Homepage — About, Projects, Experience, Contact |
-| `content/cv.yml` | Content draft (manual sync into HTML for now) |
+| `src/index.njk` | Homepage |
+| `src/_includes/home-body.njk` | Homepage main content |
+| `src/learn/` | Learn hub + articles |
+| `src/_includes/nav.njk` | Shared nav partial |
+| `src/_data/siteNav.json` | Site nav links (About, Projects, …) |
+| `src/_data/learnArticles.json` | Learn hub card list |
+| `content/cv.yml` | Content draft (manual sync into templates for now) |
 | `design/design-system.md` | Visual spec |
-
-## Preview
-
-```bash
-npx serve .
-# or: python3 -m http.server 4000
-```
-
-Open http://localhost:3000 (serve) or :4000 (python).
 
 ## Routes
 
-| URL | File |
-|-----|------|
-| `/` | `index.html` |
-| `/learn/` | `learn/index.html` (article index) |
-| `/learn/clean-vs-vertical-slice/` | `learn/clean-vs-vertical-slice/index.html` |
-| `/learn/openclaw-use-cases/` | `learn/openclaw-use-cases/index.html` (from `assets/contents/openclaw-use-cases.md`) |
+| URL | Source |
+|-----|--------|
+| `/` | `src/index.njk` |
+| `/learn/` | `src/learn/index.njk` |
+| `/learn/clean-vs-vertical-slice/` | `src/learn/clean-vs-vertical-slice/index.njk` |
+| `/learn/openclaw-use-cases/` | `src/learn/openclaw-use-cases/index.njk` |
 
-Shared learn UI: `assets/css/learn.css` (from `styles/_learn.scss`, `styles/_learn-article.scss`, `styles/_learn-mermaid.scss`, `styles/_learn-responsive.scss`), `assets/js/learn-nav.js`, `assets/js/learn-mermaid.js`.
+Shared learn UI: `assets/css/learn.css`, `assets/js/learn-nav.js`, `assets/js/learn-mermaid.js`.
 
-Responsive: single-column below 1200px for two-column articles; stacked articles stay vertical; nav collapses to menu ≤767px. Rebuild CSS after SCSS edits.
+**Mermaid diagrams** (learn articles): set `mermaid: true` in article front matter. Wrap charts in `.mermaid-diagram` / `<pre class="mermaid">`.
 
-**Mermaid diagrams** (any learn article): wrap in `.mermaid-diagram` / `.mermaid-diagram__canvas`, use `<pre class="mermaid">` for the chart, load Mermaid 11 CDN then `learn-mermaid.js`. Optional node styles — append to diagram source:
-
-```
-classDef learnStep fill:#FEFEFA,stroke:#5D7052,stroke-width:2px,color:#2C2C24
-classDef learnHandoff fill:#E6DCCD,stroke:#C18C5D,stroke-width:2px,color:#4A4A40
-```
-
-Add pages as `some/path/index.html` for clean URLs without `.html`.
+Add pages under `src/` with `permalink: /your/path/index.html`.
 
 ## Deploy
 
-Push to `main`. GitHub Pages publishes the repo as static files — no build step required if `main.css` is committed.
+Push to `main`. GitHub Actions runs `npm run build` and publishes `_site/`.
+
+**One-time setup:** Repo **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+
+## Preview without Eleventy
+
+```bash
+npm run build && npx serve _site
+```

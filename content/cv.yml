@@ -1,5 +1,4 @@
-# Content draft — copy into index.html when sections change.
-# Static site: no automatic merge yet.
+# Content draft — sync into src/_includes/home-body.njk when sections change.
 
 name: Mai QD
 full_name: Mai Quoc Dat
