@@ -24,6 +24,18 @@ body::before {
   padding-block: $space-section 4rem;
 }
 
+@media (max-width: 640px) {
+  .site-main {
+    width: min(100% - 1.25rem, $max-width-wide);
+    padding-block: 3rem 2.5rem;
+  }
+
+  .site-placeholder {
+    padding: 1.35rem 1.15rem;
+    border-radius: $radius-xl;
+  }
+}
+
 .site-placeholder {
   max-width: $max-width-content;
   padding: 2rem;

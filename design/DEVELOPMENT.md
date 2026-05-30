@@ -45,7 +45,9 @@ Open http://localhost:3000 (serve) or :4000 (python).
 | `/learn/clean-vs-vertical-slice/` | `learn/clean-vs-vertical-slice/index.html` |
 | `/learn/openclaw-use-cases/` | `learn/openclaw-use-cases/index.html` (from `assets/contents/openclaw-use-cases.md`) |
 
-Shared learn UI: `assets/css/learn.css` (from `styles/_learn.scss`, `styles/_learn-article.scss`, `styles/_learn-mermaid.scss`), `assets/js/learn-nav.js`, `assets/js/learn-mermaid.js`.
+Shared learn UI: `assets/css/learn.css` (from `styles/_learn.scss`, `styles/_learn-article.scss`, `styles/_learn-mermaid.scss`, `styles/_learn-responsive.scss`), `assets/js/learn-nav.js`, `assets/js/learn-mermaid.js`.
+
+Responsive: single-column below 1200px for two-column articles; stacked articles stay vertical; nav collapses to menu ≤767px. Rebuild CSS after SCSS edits.
 
 **Mermaid diagrams** (any learn article): wrap in `.mermaid-diagram` / `.mermaid-diagram__canvas`, use `<pre class="mermaid">` for the chart, load Mermaid 11 CDN then `learn-mermaid.js`. Optional node styles — append to diagram source:
 

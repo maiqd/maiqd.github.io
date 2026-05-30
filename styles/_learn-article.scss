@@ -73,7 +73,8 @@ body.learn-article .container {
   width: 100%;
   max-width: 75rem;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding-left: clamp(1rem, 3vw, 2rem);
+  padding-right: clamp(1rem, 3vw, 2rem);
 }
 
 .learn-article header {
@@ -131,7 +132,7 @@ body.learn-article .layout-grid {
   width: 100%;
   align-items: start;
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     grid-template-columns: 1.15fr 0.85fr;
   }
 }
@@ -158,8 +159,6 @@ body.learn-article .layout-grid--stacked {
 body.learn-article--wide .container {
   width: 100%;
   max-width: 75rem;
-  padding-left: clamp(1rem, 3vw, 2rem);
-  padding-right: clamp(1rem, 3vw, 2rem);
 }
 
 body.learn-article .learn-section--primary,

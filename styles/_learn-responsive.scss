@@ -1,0 +1,252 @@
+@import "tokens";
+
+// Learn hub + articles — tablet and below
+@media (max-width: 1023px) {
+  .learn-hub {
+    width: min(100% - 1.5rem, $max-width-wide);
+    padding-block: 2rem 3.5rem;
+  }
+
+  .learn-hub__list {
+    max-width: none;
+  }
+
+  body.learn-article .layout-grid:not(.layout-grid--stacked) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  body.learn-article .container,
+  body.learn-article--wide .container {
+    padding-left: clamp(1rem, 4vw, 1.5rem);
+    padding-right: clamp(1rem, 4vw, 1.5rem);
+  }
+
+  body.learn-article header {
+    margin-bottom: 3.5rem;
+  }
+
+  body.learn-article .organic-card {
+    padding: 2rem 1.35rem;
+
+    &:hover {
+      transform: none;
+      box-shadow: $shadow-moss;
+    }
+  }
+
+  body.learn-article .video-wrapper {
+    padding: 1rem;
+    margin-bottom: 2.5rem;
+    border-radius: $radius-2xl;
+    transform: none;
+
+    &:hover {
+      transform: none;
+      box-shadow: $shadow-moss;
+    }
+  }
+
+  body.learn-article .video-caption {
+    font-size: 1rem;
+  }
+
+  body.learn-article .section-title {
+    font-size: clamp(1.35rem, 4.5vw, 2rem);
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  body.learn-article .subtitle {
+    font-size: clamp(1.05rem, 3.5vw, 1.25rem);
+  }
+
+  body.learn-article .author-tag {
+    flex-direction: column;
+    gap: 0.35rem;
+    font-size: 0.95rem;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+
+  body.learn-article .tab-btn-group {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+    margin-bottom: 1.75rem;
+  }
+
+  body.learn-article .tab-btn {
+    width: 100%;
+    text-align: center;
+    padding: 0.65rem 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  body.learn-article .bullet-list li,
+  body.learn-article .timeline-list li {
+    font-size: 1.05rem;
+    margin-bottom: 1.25rem;
+  }
+
+  body.learn-article .bullet-list li {
+    padding-left: 2rem;
+  }
+
+  body.learn-article .question-text {
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+    margin-bottom: 1.5rem;
+  }
+
+  body.learn-article .option-item {
+    align-items: flex-start;
+    padding: 0.85rem 1.1rem;
+    border-radius: $radius-xl;
+
+    span {
+      font-size: 0.95rem;
+      line-height: 1.45;
+    }
+
+    &:hover {
+      transform: none;
+    }
+  }
+
+  body.learn-article .radio-circle {
+    margin-right: 0.85rem;
+    margin-top: 0.2rem;
+  }
+
+  body.learn-article .btn-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    margin-top: 2rem;
+
+    .btn-organic {
+      width: 100%;
+      justify-content: center;
+    }
+
+    #quiz-progress-text {
+      order: -1;
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  body.learn-article .quiz-feedback {
+    padding: 1.15rem 1.25rem;
+  }
+
+  body.learn-article .layout-grid--stacked {
+    gap: 2.5rem;
+  }
+
+  body.learn-article .learn-block-title {
+    margin-bottom: 1rem;
+  }
+
+  body.learn-article .cost-table-wrap {
+    -webkit-overflow-scrolling: touch;
+    margin-left: -0.25rem;
+    margin-right: -0.25rem;
+    padding-bottom: 0.25rem;
+  }
+
+  body.learn-article .cost-table {
+    font-size: 0.875rem;
+
+    th,
+    td {
+      padding: 0.65rem 0.75rem;
+    }
+  }
+
+  body.learn-article .prompt-block {
+    padding: 1rem 1.1rem;
+  }
+
+  body.learn-article .reflection-list li {
+    padding: 1rem 1.1rem;
+    font-size: 1rem;
+  }
+
+  body.learn-page .mermaid-diagram__canvas {
+    padding: 1rem 0.5rem;
+  }
+
+  body.learn-page .mermaid-diagram__caption {
+    padding: 0.85rem 1rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .learn-nav__sections {
+    max-height: min(55vh, 20rem);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  [id].learn-section {
+    scroll-margin-top: 6rem;
+  }
+}
+
+// Phones
+@media (max-width: 640px) {
+  body.learn-article .tab-btn-group {
+    grid-template-columns: 1fr;
+  }
+
+  body.learn-article .organic-card,
+  body.learn-article .organic-card--content {
+    padding: 1.35rem 1rem;
+  }
+
+  body.learn-article .flashcard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.learn-article .score-display-ring {
+    width: 140px;
+    height: 140px;
+  }
+
+  body.learn-article .score-num {
+    font-size: 2.75rem;
+  }
+
+  body.learn-article .commentary {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+
+  body.learn-article footer {
+    margin-top: 4rem;
+    padding: 2.5rem 0;
+  }
+
+  .learn-nav {
+    margin-bottom: 1.5rem;
+  }
+
+  .learn-nav__logo-text {
+    font-size: 1rem;
+  }
+
+  [id].learn-section {
+    scroll-margin-top: 5.5rem;
+  }
+}
+
+// Two-column article layout only on wide viewports
+@media (min-width: 1024px) and (max-width: 1199px) {
+  body.learn-article .layout-grid:not(.layout-grid--stacked) {
+    grid-template-columns: 1fr;
+  }
+}
