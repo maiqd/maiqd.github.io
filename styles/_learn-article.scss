@@ -1,4 +1,5 @@
 @import "tokens";
+@import "site-shell";
 
 $learn-shadow-soft: 0 10px 40px -10px rgba(93, 112, 82, 0.15);
 $learn-shadow-float: 0 20px 50px -15px rgba(193, 140, 93, 0.2);
@@ -69,12 +70,12 @@ body.learn-article .blob-2 {
   }
 }
 
-body.learn-article .container {
-  width: 100%;
-  max-width: 75rem;
-  margin: 0 auto;
-  padding-left: clamp(1rem, 3vw, 2rem);
-  padding-right: clamp(1rem, 3vw, 2rem);
+body.learn-article .container,
+body.learn-article--wide .container {
+  @include site-shell-layout;
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .learn-article header {
@@ -154,11 +155,6 @@ body.learn-article .layout-grid--stacked {
     width: 100%;
     max-width: none;
   }
-}
-
-body.learn-article--wide .container {
-  width: 100%;
-  max-width: 75rem;
 }
 
 body.learn-article .learn-section--primary,

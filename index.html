@@ -3,24 +3,354 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Web Developer">
-  <title>Mai QD</title>
+  <meta name="description" content="Mai Quoc Dat — Senior Software Engineer specializing in .NET, Azure, and cloud-native systems. Hanoi, Vietnam.">
+  <title>Mai Quoc Dat · Senior Software Engineer</title>
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/main.css">
 </head>
-<body>
-  <main class="site-main" id="main">
-    <section class="site-placeholder" aria-labelledby="cv-heading">
-      <h1 id="cv-heading">Mai QD</h1>
-      <p class="tagline">Web Developer</p>
-      <p>Static site — no Jekyll. Styles from <code>styles/</code>; content draft in <code>content/cv.yml</code>.</p>
-      <p>Build the CV per <code>design/design-system.md</code>.</p>
-      <p><a href="/learn/">Learn</a></p>
-    </section>
-  </main>
+<body class="home-page">
+  <div class="site-shell">
+    <nav class="learn-nav" aria-label="Primary">
+      <div class="learn-nav__pill">
+        <div class="learn-nav__bar">
+          <a class="learn-nav__logo" href="/">
+            <span class="learn-nav__logo-mark" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2 2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5"/>
+                <path d="M2 12l10 5 10-5"/>
+              </svg>
+            </span>
+            <span class="learn-nav__logo-text">Mai QD</span>
+          </a>
+          <button type="button" class="learn-nav__toggle" aria-expanded="false" aria-controls="learn-nav-panel">
+            <span class="learn-nav__toggle-icon" aria-hidden="true"></span>
+            <span class="learn-nav__sr-only">Menu</span>
+          </button>
+          <div class="learn-nav__panel" id="learn-nav-panel">
+            <ul class="learn-nav__links learn-nav__sections">
+              <li><a href="#about" class="learn-nav__link is-active" data-section="about">About</a></li>
+              <li><a href="#projects" class="learn-nav__link" data-section="projects">Projects</a></li>
+              <li><a href="#experience" class="learn-nav__link" data-section="experience">Experience</a></li>
+              <li><a href="#contact" class="learn-nav__link" data-section="contact">Contact</a></li>
+            </ul>
+            <div class="learn-nav__actions">
+              <a class="learn-nav__btn" href="/learn/">Learn</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main id="main">
+      <section class="home-section home-hero" id="about" data-learn-section aria-labelledby="about-heading">
+        <div class="home-hero__intro">
+          <div>
+            <h1 class="home-hero__name" id="about-heading">Mai Quoc Dat</h1>
+            <p class="home-hero__tagline">Senior Software Engineer · Hanoi, Vietnam</p>
+          </div>
+          <p class="home-hero__meta">
+            <a href="tel:+84326499160">0326499160</a>
+            <a href="mailto:q.dat2710@gmail.com">q.dat2710@gmail.com</a>
+            <a href="https://github.com/MaiQD" target="_blank" rel="noopener noreferrer">github.com/MaiQD</a>
+          </p>
+          <p class="home-hero__summary">
+            Senior Software Engineer with 6+ years of experience specializing in designing
+            and building scalable, cloud-native systems on .NET and Azure. Experienced in
+            the hands-on implementation of architectural migrations to modular monoliths and
+            developing resilient microservices with Kafka and gRPC. Adept at implementing
+            real-time streaming data solutions with Azure IoT Hub and Event Hub, enhancing
+            system security, and driving productivity with AI-first workflows. A collaborative
+            team member with a strong background in Agile/Scrum, dedicated to mentoring and
+            delivering high-quality, maintainable code.
+          </p>
+          <div class="home-hero__actions">
+            <a class="home-btn home-btn--primary" href="https://www.topcv.vn/xem-cv/BwpUB1cFUlQDCwdRAwBRUFADVgBRUFFaBFtSUw2239" target="_blank" rel="noopener noreferrer">Download CV</a>
+            <a class="home-btn home-btn--ghost" href="#contact">Get in touch →</a>
+          </div>
+        </div>
+
+        <aside class="home-skills" aria-labelledby="skills-heading">
+          <p class="home-skills__heading" id="skills-heading">Technical skills</p>
+          <div class="home-skills__group">
+            <p class="home-skills__label">Languages &amp; Frameworks</p>
+            <div class="home-skills__tags">
+              <span class="home-tag">C#</span>
+              <span class="home-tag">.NET 8</span>
+              <span class="home-tag">.NET Core</span>
+              <span class="home-tag">.NET Framework</span>
+              <span class="home-tag">ASP.NET Core</span>
+              <span class="home-tag">ASP.NET MVC</span>
+            </div>
+          </div>
+          <div class="home-skills__group">
+            <p class="home-skills__label">Cloud Services</p>
+            <div class="home-skills__tags">
+              <span class="home-tag">IoT Hub</span>
+              <span class="home-tag">Event Hub</span>
+              <span class="home-tag">Stream Analytics</span>
+              <span class="home-tag">Service Bus</span>
+              <span class="home-tag">Functions</span>
+              <span class="home-tag">App Services</span>
+              <span class="home-tag">Elastic Jobs</span>
+              <span class="home-tag">Storage</span>
+            </div>
+          </div>
+          <div class="home-skills__group">
+            <p class="home-skills__label">Database</p>
+            <div class="home-skills__tags">
+              <span class="home-tag">MS SQL Server</span>
+              <span class="home-tag">PostgreSQL</span>
+              <span class="home-tag">Oracle</span>
+              <span class="home-tag">Partitioning</span>
+              <span class="home-tag">Columnstore Indexes</span>
+            </div>
+          </div>
+          <div class="home-skills__group">
+            <p class="home-skills__label">Architecture &amp; Messaging</p>
+            <div class="home-skills__tags">
+              <span class="home-tag">Microservices</span>
+              <span class="home-tag">Modular Monolith</span>
+              <span class="home-tag">Event-Driven Architecture</span>
+              <span class="home-tag">Kafka</span>
+              <span class="home-tag">gRPC</span>
+            </div>
+          </div>
+          <div class="home-skills__group">
+            <p class="home-skills__label">DevOps</p>
+            <div class="home-skills__tags">
+              <span class="home-tag">Azure DevOps</span>
+              <span class="home-tag">GitHub Actions</span>
+            </div>
+          </div>
+          <div class="home-skills__group">
+            <p class="home-skills__label">Testing</p>
+            <div class="home-skills__tags">
+              <span class="home-tag">Unit Testing</span>
+              <span class="home-tag">xUnit</span>
+              <span class="home-tag">Moq</span>
+              <span class="home-tag">Postman</span>
+              <span class="home-tag">JMeter</span>
+            </div>
+          </div>
+          <div class="home-skills__group">
+            <p class="home-skills__label">Methodologies</p>
+            <div class="home-skills__tags">
+              <span class="home-tag">Agile</span>
+              <span class="home-tag">Scrum</span>
+            </div>
+          </div>
+          <div class="home-skills__group">
+            <p class="home-skills__label">Language</p>
+            <div class="home-skills__tags">
+              <span class="home-tag">Vietnamese</span>
+              <span class="home-tag">English</span>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="home-section" id="projects" data-learn-section aria-labelledby="projects-heading">
+        <h2 class="home-section__title" id="projects-heading">Projects</h2>
+        <div class="home-projects">
+          <article class="home-project">
+            <p class="home-project__status"><span class="home-project__status-dot" aria-hidden="true"></span> Done</p>
+            <h3 class="home-project__title">datnet-workout-tracker</h3>
+            <p class="home-project__tagline">A .NET-based workout tracking application.</p>
+            <div class="home-project__tags">
+              <span class="home-tag">.NET</span>
+              <span class="home-tag">C#</span>
+            </div>
+            <div class="home-project__links">
+              <a href="https://github.com/maiqd/datnet-workout-tracker" target="_blank" rel="noopener noreferrer">GitHub →</a>
+            </div>
+          </article>
+
+          <article class="home-project">
+            <p class="home-project__status home-project__status--active"><span class="home-project__status-dot" aria-hidden="true"></span> Active</p>
+            <h3 class="home-project__title">gemini-tubeSide</h3>
+            <p class="home-project__tagline">
+              MV3 Chrome extension for YouTube summarization with a BYOK privacy model.
+              Uses Gemini 2.5 Flash API and vanilla JS — no backend servers.
+            </p>
+            <div class="home-project__tags">
+              <span class="home-tag">JavaScript</span>
+              <span class="home-tag">Chrome Extension</span>
+              <span class="home-tag">Gemini API</span>
+            </div>
+            <div class="home-project__links">
+              <a href="https://github.com/maiqd/gemini-tubeSide" target="_blank" rel="noopener noreferrer">GitHub →</a>
+            </div>
+          </article>
+
+          <article class="home-project">
+            <p class="home-project__status home-project__status--active"><span class="home-project__status-dot" aria-hidden="true"></span> Active</p>
+            <h3 class="home-project__title">maiqd.github.io</h3>
+            <p class="home-project__tagline">
+              Personal portfolio and learn section — static HTML, organic design system, SCSS.
+            </p>
+            <div class="home-project__tags">
+              <span class="home-tag">HTML</span>
+              <span class="home-tag">SCSS</span>
+              <span class="home-tag">GitHub Pages</span>
+            </div>
+            <div class="home-project__links">
+              <a href="https://github.com/maiqd/maiqd.github.io" target="_blank" rel="noopener noreferrer">GitHub →</a>
+              <a href="/learn/">Learn →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="home-section" id="experience" data-learn-section aria-labelledby="experience-heading">
+        <h2 class="home-section__title" id="experience-heading">Experience</h2>
+        <div class="home-timeline">
+          <article class="home-exp">
+            <div class="home-exp__meta">
+              <span>2024 – Present</span>
+            </div>
+            <h3 class="home-exp__role">Fullstack Software Engineer</h3>
+            <p class="home-exp__company">Confidential Global HR Platform</p>
+            <ul class="home-exp__details">
+              <li>Contributed to the architectural migration from a monolith to a modular monolith using C#, .NET Framework, and .NET Core, improving system maintainability and enabling independent deployments.</li>
+              <li>Developed resilient inter-service communication patterns using Kafka and gRPC, establishing clear data contracts to ensure reliable integration between internal applications.</li>
+              <li>Enhanced system security by implementing improvements to authentication and authorization modules, addressing vulnerabilities, and hardening admin-level access controls.</li>
+              <li>Worked on legacy front-end components using ASP.NET MVC and modernizing features with Vue.js, while maintaining a consistent user experience.</li>
+              <li>Championed AI-first development workflows using Copilot and internal tools, creating best practices that accelerated feature delivery and improved code quality.</li>
+            </ul>
+          </article>
+
+          <article class="home-exp">
+            <div class="home-exp__meta">
+              <span>2023 – 2024</span>
+            </div>
+            <h3 class="home-exp__role">Fullstack Software Engineer</h3>
+            <p class="home-exp__company">SpiderBox Design</p>
+            <ul class="home-exp__details">
+              <li>Engineered and delivered high-throughput, real-time data streaming pipelines on Azure using IoT Hub, Event Hub, and Stream Analytics with C#/.NET.</li>
+              <li>Designed and optimized high-volume MS SQL Server databases for time-series data, implementing partitioning and clustered columnstore indexes.</li>
+              <li>Developed and deployed new .NET microservices for external data integration and created automated CI/CD pipelines with Azure DevOps.</li>
+              <li>Trained and mentored new engineers on Azure services and team coding standards, accelerating their onboarding and contribution to the project.</li>
+              <li>Automated complex database maintenance tasks using Azure Elastic Jobs, minimizing manual intervention and improving operational stability.</li>
+            </ul>
+          </article>
+
+          <article class="home-exp">
+            <div class="home-exp__meta">
+              <span>2021 – 2023</span>
+            </div>
+            <h3 class="home-exp__role">Senior Software Engineer</h3>
+            <p class="home-exp__company">FPT Software</p>
+            <ul class="home-exp__details">
+              <li>Built and maintained background data synchronization services (Windows Services) and ASP.NET Core APIs using C# and PostgreSQL to ensure data consistency for the VetHero platform.</li>
+              <li>Leveraged Azure App Services and Service Bus to develop scalable web services and asynchronous messaging, improving system reliability.</li>
+              <li>Introduced and drove the adoption of unit testing practices using xUnit and Moq, leading to improved code quality and a reduction in post-release bugs.</li>
+            </ul>
+          </article>
+
+          <article class="home-exp">
+            <div class="home-exp__meta">
+              <span>2019 – 2021</span>
+            </div>
+            <h3 class="home-exp__role">Web Developer</h3>
+            <p class="home-exp__company">Global Online Solution., JSC</p>
+            <ul class="home-exp__details">
+              <li>Developed and maintained ASP.NET Core web applications with an Oracle Database backend for Vietnamese government agencies, including the Ministry of Finance.</li>
+              <li>Optimized complex Oracle queries and automated report generation using stored procedures and DevExpress, significantly reducing manual reporting effort.</li>
+            </ul>
+          </article>
+
+          <article class="home-exp">
+            <div class="home-exp__meta">
+              <span>2019</span>
+            </div>
+            <h3 class="home-exp__role">Web Developer</h3>
+            <p class="home-exp__company">Thien Hoang Solutions JSC</p>
+            <ul class="home-exp__details">
+              <li>Contributed to the development of web applications using ASP.NET Core and MS SQL Server, gaining foundational experience in enterprise software development.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="home-education">
+          <p class="home-education__degree">Information System</p>
+          <p class="home-education__school">Thang Long University</p>
+          <p class="home-education__time">10/2016 – 05/2020</p>
+          <p class="home-education__detail">GPA: 3.5/4</p>
+        </div>
+
+        <div class="home-aside-block">
+          <p class="home-aside-block__title">Certifications</p>
+          <ul class="home-aside-list">
+            <li class="home-aside-list__item">
+              <span class="home-aside-list__label">Microsoft Certified: Azure Developer Associate (AZ-204)</span>
+              <span class="home-aside-list__meta">2022</span>
+            </li>
+            <li class="home-aside-list__item">
+              <span class="home-aside-list__label">Professional Scrum Master I (PSM I)</span>
+              <span class="home-aside-list__meta">2022</span>
+            </li>
+            <li class="home-aside-list__item">
+              <span class="home-aside-list__label">Oracle Certified Associate, Oracle Database SQL</span>
+              <span class="home-aside-list__meta">2021</span>
+            </li>
+            <li class="home-aside-list__item">
+              <span class="home-aside-list__label">Microsoft Certified: Azure Fundamentals (AZ-900)</span>
+              <span class="home-aside-list__meta">2022</span>
+            </li>
+            <li class="home-aside-list__item">
+              <span class="home-aside-list__label">Udacity Nanodegree — DevOps on Azure</span>
+              <span class="home-aside-list__meta">2022</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="home-aside-block">
+          <p class="home-aside-block__title">Honors &amp; Awards</p>
+          <ul class="home-aside-list">
+            <li class="home-aside-list__item">
+              <span class="home-aside-list__label">Best performance Semi 1 of FHS — FPT Software</span>
+              <span class="home-aside-list__meta">2022</span>
+            </li>
+            <li class="home-aside-list__item">
+              <span class="home-aside-list__label">Employee of the month of FHS — FPT Software</span>
+              <span class="home-aside-list__meta">2021</span>
+            </li>
+            <li class="home-aside-list__item">
+              <span class="home-aside-list__label">Thang Long University Scholarship in 2nd semester 2018–2019</span>
+              <span class="home-aside-list__meta">2018–2019</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="home-section" id="contact" data-learn-section aria-labelledby="contact-heading">
+        <h2 class="home-section__title" id="contact-heading">Contact</h2>
+        <div class="home-contact">
+          <a class="home-contact__card" href="tel:+84326499160">
+            <span class="home-contact__label">Phone</span>
+            <span class="home-contact__value">0326499160</span>
+          </a>
+          <a class="home-contact__card" href="mailto:q.dat2710@gmail.com">
+            <span class="home-contact__label">Email</span>
+            <span class="home-contact__value">q.dat2710@gmail.com</span>
+          </a>
+          <a class="home-contact__card" href="https://github.com/MaiQD" target="_blank" rel="noopener noreferrer">
+            <span class="home-contact__label">GitHub</span>
+            <span class="home-contact__value">MaiQD</span>
+          </a>
+          <a class="home-contact__card" href="https://www.linkedin.com/in/qd-mai" target="_blank" rel="noopener noreferrer">
+            <span class="home-contact__label">LinkedIn</span>
+            <span class="home-contact__value">qd-mai</span>
+          </a>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="/assets/js/learn-nav.js" defer></script>
   <script>
     (function (i, s, o, g, r, a, m) {
       i['GoogleAnalyticsObject'] = r;

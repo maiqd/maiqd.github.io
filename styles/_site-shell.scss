@@ -1,0 +1,18 @@
+@import "tokens";
+
+@mixin site-shell-layout {
+  width: min(100% - 2rem, $max-width-wide);
+  margin-inline: auto;
+  padding-block: 1.25rem 4rem;
+}
+
+.site-shell {
+  @include site-shell-layout;
+}
+
+@media (max-width: 640px) {
+  .site-shell {
+    width: min(100% - 1.25rem, $max-width-wide);
+    padding-block: 0.75rem 2.5rem;
+  }
+}

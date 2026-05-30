@@ -1,23 +1,173 @@
-# Content draft — copy into index.html when sections are built.
+# Content draft — copy into index.html when sections change.
 # Static site: no automatic merge yet.
 
 name: Mai QD
-tagline: Web Developer
+full_name: Mai Quoc Dat
+tagline: Senior Software Engineer
+location: Hanoi, Vietnam
 email: q.dat2710@gmail.com
+phone: "0326499160"
 github: MaiQD
-linkedin: alandoe
+linkedin: qd-mai
 twitter: "@Mai_QD"
-website: blog.webjeda.com
-artstation: https://www.artstation.com/qdmai
+cv_url: https://www.topcv.vn/xem-cv/BwpUB1cFUlQDCwdRAwBRUFADVgBRUFFaBFtSUw2239
 
 avatar: assets/images/img.jpg
 
-summary: ""
+summary: >
+  Senior Software Engineer with 6+ years of experience specializing in designing
+  and building scalable, cloud-native systems on .NET and Azure. Experienced in
+  the hands-on implementation of architectural migrations to modular monoliths and
+  developing resilient microservices with Kafka and gRPC. Adept at implementing
+  real-time streaming data solutions with Azure IoT Hub and Event Hub, enhancing
+  system security, and driving productivity with AI-first workflows. A collaborative
+  team member with a strong background in Agile/Scrum, dedicated to mentoring and
+  delivering high-quality, maintainable code.
 
-experiences: []
+skills:
+  - category: Languages & Frameworks
+    items:
+      - C#
+      - .NET 8
+      - .NET Core
+      - .NET Framework
+      - ASP.NET Core
+      - ASP.NET MVC
+  - category: Cloud Services
+    items:
+      - IoT Hub
+      - Event Hub
+      - Stream Analytics
+      - Service Bus
+      - Functions
+      - App Services
+      - Elastic Jobs
+      - Storage
+  - category: Database
+    items:
+      - MS SQL Server
+      - PostgreSQL
+      - Oracle
+      - Partitioning
+      - Columnstore Indexes
+  - category: Architecture & Messaging
+    items:
+      - Microservices
+      - Modular Monolith
+      - Event-Driven Architecture
+      - Kafka
+      - gRPC
+  - category: DevOps
+    items:
+      - Azure DevOps
+      - GitHub Actions
+  - category: Testing
+    items:
+      - Unit Testing
+      - xUnit
+      - Moq
+      - Postman
+      - JMeter
+  - category: Methodologies
+    items:
+      - Agile
+      - Scrum
+  - category: Language
+    items:
+      - Vietnamese
+      - English
 
-projects: []
+certifications:
+  - name: "Microsoft Certified: Azure Developer Associate (AZ-204)"
+    year: "2022"
+  - name: Professional Scrum Master I (PSM I)
+    year: "2022"
+  - name: Oracle Certified Associate, Oracle Database SQL
+    year: "2021"
+  - name: "Microsoft Certified: Azure Fundamentals (AZ-900)"
+    year: "2022"
+  - name: Udacity Nanodegree - DevOps on Azure
+    year: "2022"
 
-skills: []
+education:
+  - school: Thang Long University
+    degree: Information System
+    time: 10/2016 – 05/2020
+    gpa: "3.5/4"
 
-education: []
+experiences:
+  - role: Fullstack Software Engineer
+    company: Confidential Global HR Platform
+    time: 2024 – Present
+    details:
+      - Contributed to the architectural migration from a monolith to a modular monolith using C#, .NET Framework, and .NET Core, improving system maintainability and enabling independent deployments.
+      - Developed resilient inter-service communication patterns using Kafka and gRPC, establishing clear data contracts to ensure reliable integration between internal applications.
+      - Enhanced system security by implementing improvements to authentication and authorization modules, addressing vulnerabilities, and hardening admin-level access controls.
+      - Worked on legacy front-end components using ASP.NET MVC and modernizing features with Vue.js, while maintaining a consistent user experience.
+      - Championed AI-first development workflows using Copilot and internal tools, creating best practices that accelerated feature delivery and improved code quality.
+  - role: Fullstack Software Engineer
+    company: SpiderBox Design
+    time: 2023 – 2024
+    details:
+      - Engineered and delivered high-throughput, real-time data streaming pipelines on Azure using IoT Hub, Event Hub, and Stream Analytics with C#/.NET.
+      - Designed and optimized high-volume MS SQL Server databases for time-series data, implementing partitioning and clustered columnstore indexes.
+      - Developed and deployed new .NET microservices for external data integration and created automated CI/CD pipelines with Azure DevOps.
+      - Trained and mentored new engineers on Azure services and team coding standards, accelerating their onboarding and contribution to the project.
+      - Automated complex database maintenance tasks using Azure Elastic Jobs, minimizing manual intervention and improving operational stability.
+  - role: Senior Software Engineer
+    company: FPT Software
+    time: 2021 – 2023
+    details:
+      - Built and maintained background data synchronization services (Windows Services) and ASP.NET Core APIs using C# and PostgreSQL to ensure data consistency for the VetHero platform.
+      - Leveraged Azure App Services and Service Bus to develop scalable web services and asynchronous messaging, improving system reliability.
+      - Introduced and drove the adoption of unit testing practices using xUnit and Moq, leading to improved code quality and a reduction in post-release bugs.
+  - role: Web Developer
+    company: Global Online Solution., JSC
+    time: 2019 – 2021
+    details:
+      - Developed and maintained ASP.NET Core web applications with an Oracle Database backend for Vietnamese government agencies, including the Ministry of Finance.
+      - Optimized complex Oracle queries and automated report generation using stored procedures and DevExpress, significantly reducing manual reporting effort.
+  - role: Web Developer
+    company: Thien Hoang Solutions JSC
+    time: "2019"
+    details:
+      - Contributed to the development of web applications using ASP.NET Core and MS SQL Server, gaining foundational experience in enterprise software development.
+
+awards:
+  - title: Best performance Semi 1 of FHS - FPT Software
+    year: "2022"
+  - title: Employee of the month of FHS - FPT Software
+    year: "2021"
+  - title: Thang Long University Scholarship in 2nd semester 2018-2019
+    year: 2018-2019
+
+projects:
+  - title: datnet-workout-tracker
+    status: done
+    tagline: A .NET-based workout tracking application.
+    tags:
+      - .NET
+      - C#
+    links:
+      github: https://github.com/maiqd/datnet-workout-tracker
+  - title: gemini-tubeSide
+    status: active
+    tagline: >
+      MV3 Chrome extension for YouTube summarization with a BYOK privacy model.
+      Uses Gemini 2.5 Flash API and vanilla JS — no backend servers.
+    tags:
+      - JavaScript
+      - Chrome Extension
+      - Gemini API
+    links:
+      github: https://github.com/maiqd/gemini-tubeSide
+  - title: maiqd.github.io
+    status: active
+    tagline: Personal portfolio and learn section — static HTML, organic design system, SCSS.
+    tags:
+      - HTML
+      - SCSS
+      - GitHub Pages
+    links:
+      github: https://github.com/maiqd/maiqd.github.io
+      live: /learn/

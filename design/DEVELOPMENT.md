@@ -23,7 +23,7 @@ Commit `assets/css/main.css` after style changes so Pages works without a CI bui
 
 | File | Role |
 |------|------|
-| `index.html` | Live homepage / CV markup |
+| `index.html` | Homepage — About, Projects, Experience, Contact |
 | `content/cv.yml` | Content draft (manual sync into HTML for now) |
 | `design/design-system.md` | Visual spec |
 

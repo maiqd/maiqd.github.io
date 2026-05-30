@@ -9,11 +9,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/main.css">
   <link rel="stylesheet" href="/assets/css/learn.css">
 </head>
 <body class="learn-page">
-  <div class="learn-hub">
+  <div class="site-shell learn-hub">
     <nav class="learn-nav" aria-label="Site">
       <div class="learn-nav__pill">
         <div class="learn-nav__bar">
@@ -32,9 +31,14 @@
             <span class="learn-nav__sr-only">Menu</span>
           </button>
           <div class="learn-nav__panel" id="learn-nav-panel">
-            <span class="learn-nav__current">Learn</span>
+            <ul class="learn-nav__links learn-nav__sections">
+              <li><a href="/#about" class="learn-nav__link">About</a></li>
+              <li><a href="/#projects" class="learn-nav__link">Projects</a></li>
+              <li><a href="/#experience" class="learn-nav__link">Experience</a></li>
+              <li><a href="/#contact" class="learn-nav__link">Contact</a></li>
+            </ul>
             <div class="learn-nav__actions">
-              <a class="learn-nav__btn" href="/">Home</a>
+              <a class="learn-nav__btn" href="/learn/" aria-current="page">Learn</a>
             </div>
           </div>
         </div>
