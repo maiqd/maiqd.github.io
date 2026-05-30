@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Study notes on six OpenClaw agent workflows: second brain, morning brief, content factory, market research, Kanban goals, and mission control.">
+  <title>6 OpenClaw Use Cases · Learn · Mai QD</title>
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,400&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/learn.css">
+</head>
+<body class="learn-page learn-article learn-article--wide">
+
+    <div class="ambient-blob blob-1" aria-hidden="true"></div>
+    <div class="ambient-blob blob-2" aria-hidden="true"></div>
+
+    <div class="container">
+
+        <nav class="learn-nav" aria-label="Learn and page sections">
+            <div class="learn-nav__pill">
+                <div class="learn-nav__bar">
+                    <a class="learn-nav__logo" href="/">
+                        <span class="learn-nav__logo-mark" aria-hidden="true">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2 2 7l10 5 10-5-10-5z"/>
+                                <path d="M2 17l10 5 10-5"/>
+                                <path d="M2 12l10 5 10-5"/>
+                            </svg>
+                        </span>
+                        <span class="learn-nav__logo-text">Mai QD</span>
+                    </a>
+                    <button type="button" class="learn-nav__toggle" aria-expanded="false" aria-controls="learn-nav-panel">
+                        <span class="learn-nav__toggle-icon" aria-hidden="true"></span>
+                        <span class="learn-nav__sr-only">Menu</span>
+                    </button>
+                    <div class="learn-nav__panel" id="learn-nav-panel">
+                        <ul class="learn-nav__links learn-nav__sections">
+                            <li><a href="#overview-sec" class="learn-nav__link" data-section="overview-sec">Overview</a></li>
+                            <li><a href="#video-sec" class="learn-nav__link" data-section="video-sec">Video</a></li>
+                            <li><a href="#content-sec" class="learn-nav__link" data-section="content-sec">Use cases</a></li>
+                            <li><a href="#quiz-sec" class="learn-nav__link" data-section="quiz-sec">Quiz</a></li>
+                            <li><a href="#study-sec" class="learn-nav__link" data-section="study-sec">Study</a></li>
+                        </ul>
+                        <div class="learn-nav__actions">
+                            <a class="learn-nav__ghost" href="/">Home</a>
+                            <a class="learn-nav__btn" href="/learn/">All articles</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <header id="overview-sec" class="learn-section">
+            <h1>OpenClaw <em>Workflows</em></h1>
+            <div class="subtitle">Six agentic use cases that turn chat into memory, schedules, and self-hosted apps.</div>
+            <div class="author-tag">
+                From Alex Finn: &ldquo;6 OpenClaw use cases I promise will change your life&rdquo;
+            </div>
+        </header>
+
+        <main class="layout-grid layout-grid--stacked">
+
+            <section id="content-sec" class="learn-section learn-section--primary">
+                <div id="video-sec" class="video-wrapper learn-section">
+                    <div class="video-container">
+                        <iframe id="yt-player" src="https://www.youtube.com/embed/41_TNGDDnfQ?enablejsapi=1" title="6 OpenClaw use cases I promise will change your life" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-caption">Source video — study notes and prompts below</div>
+                </div>
+
+                <div class="organic-card card-span organic-card--content">
+                    <div class="tab-btn-group" role="tablist">
+                        <button class="tab-btn active" role="tab" aria-selected="true" onclick="switchTab('overview')">Overview</button>
+                        <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab('usecases')">Use cases</button>
+                        <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab('prompts')">Prompts</button>
+                        <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab('economics')">Costs</button>
+                    </div>
+
+                    <div id="tab-overview" class="tab-content active" role="tabpanel">
+                        <h2 class="section-title">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                            Why OpenClaw matters
+                        </h2>
+                        <p style="margin-top: -0.5rem; color: var(--muted-foreground); font-style: italic;">
+                            Informational showcase plus copy-paste prompts — a hybrid you can run yourself.
+                        </p>
+                        <ul class="bullet-list">
+                            <li><strong>Persistent memory:</strong> Reference historical instructions, notes, and documents across conversations.</li>
+                            <li><strong>Proactive execution:</strong> Run multi-step workflows on a schedule (e.g. overnight) without a live trigger.</li>
+                            <li><strong>OS &amp; browser control:</strong> Browse the web, navigate the OS, and handle complex file operations.</li>
+                            <li><strong>Vibe coding:</strong> Prompt the agent to build, launch, and host apps (often Next.js) from chat.</li>
+                        </ul>
+                    </div>
+
+                    <div id="tab-usecases" class="tab-content" role="tabpanel">
+                        <h2 class="section-title">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M8 7h8M8 11h8"/></svg>
+                            Six life-changing workflows
+                        </h2>
+                        <ol class="use-case-list">
+                            <li class="use-case-item">
+                                <h3>1. Autonomous second brain</h3>
+                                <p>Text thoughts and links to the bot via iMessage, Telegram, or Discord. OpenClaw can ship a custom Next.js UI with global search (<code>Cmd+K</code>) over parsed memory.</p>
+                            </li>
+                            <li class="use-case-item">
+                                <h3>2. Custom morning brief</h3>
+                                <p>Daily report at a set time (e.g. 8:00 AM): niche news, business ideas, local todos, and proactive task recommendations the agent can do with you.</p>
+                            </li>
+                            <li class="use-case-item">
+                                <h3>3. Multi-agent content factory</h3>
+                                <p>Discord channels for specialized agents: <strong>Henry</strong> researches trends, <strong>Quill</strong> drafts scripts and threads, <strong>Pixel</strong> generates thumbnails.</p>
+                            </li>
+                            <li class="use-case-item">
+                                <h3>4. &ldquo;Last 30 Days&rdquo; market research</h3>
+                                <p>Matt Van Horde&rsquo;s skill scrapes Reddit and X sentiment over 30 days — surface friction, then vibe-code an app to solve it.</p>
+                            </li>
+                            <li class="use-case-item">
+                                <h3>5. Goal-driven Kanban</h3>
+                                <p>Feed a master goals document; each morning the agent proposes 4–5 micro-tasks, tracks them on a Kanban board, and executes autonomously.</p>
+                            </li>
+                            <li class="use-case-item">
+                                <h3>6. Unified mission control</h3>
+                                <p>Replace fragmented SaaS with self-hosted apps that share the agent&rsquo;s full memory — calendar, todos, and notes in one cohesive surface.</p>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div id="tab-prompts" class="tab-content" role="tabpanel">
+                        <h2 class="section-title">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>
+                            Implementation prompts
+                        </h2>
+                        <p style="font-size: 1.05rem; color: var(--muted-foreground); margin-bottom: 1.5rem;">Copy these into your OpenClaw agent as starting configurations.</p>
+                        <ol class="prompt-list">
+                            <li class="prompt-block">
+                                <strong>Second brain UI</strong>
+                                <p>&ldquo;I want to build a second brain system where I can review all our notes, conversations, and memories. Please build that out with Next.js, run it, and provide the access URL.&rdquo;</p>
+                            </li>
+                            <li class="prompt-block">
+                                <strong>Morning brief (Telegram / Discord)</strong>
+                                <p>&ldquo;I want to set up a regular morning brief every morning at 8:00 AM. I want you to send me a report through Telegram. I want this report to include: 1) News stories relevant to my interests, 2) Ideas for businesses I can create, 3) Tasks I need to complete today, and 4) Recommendations for tasks we can complete together today.&rdquo;</p>
+                            </li>
+                            <li class="prompt-block">
+                                <strong>Content factory (Discord)</strong>
+                                <p>&ldquo;I want you to build me a content factory inside of Discord. Set up channels for different agents. Have an agent that researches top trending stories, another agent that takes those stories and writes scripts, and another agent that generates thumbnails. Have all their work organized in different channels daily at 8:00 AM.&rdquo;</p>
+                            </li>
+                            <li class="prompt-block">
+                                <strong>Last 30 Days skill</strong>
+                                <p>Install Matt Van Horde&rsquo;s skill, then: &ldquo;Please use the Last 30-day skill to research challenges people are having with [topic].&rdquo;</p>
+                            </li>
+                            <li class="prompt-block">
+                                <strong>Goal Kanban</strong>
+                                <p>Paste your goals doc first, then: &ldquo;Based on these goals, every morning at 8:00 AM come up with 4 to 5 tasks that you can autonomously complete on my computer to bring me closer to these objectives. Build out an interactive Kanban board app to visually track your progress on these tasks.&rdquo;</p>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div id="tab-economics" class="tab-content" role="tabpanel">
+                        <h2 class="section-title">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                            API models &amp; monthly cost
+                        </h2>
+                        <div class="cost-table-wrap">
+                            <table class="cost-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Strategy</th>
+                                        <th scope="col">Model</th>
+                                        <th scope="col">Approx. / mo</th>
+                                        <th scope="col">Best for</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Premium</td>
+                                        <td>Claude 3.5 Sonnet / Opus</td>
+                                        <td>~$200</td>
+                                        <td>Vibe coding, complex architecture</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Budget</td>
+                                        <td>MiniMax 2.5</td>
+                                        <td>~$10</td>
+                                        <td>High-volume text automation &amp; research</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ultra-budget</td>
+                                        <td>GLM5</td>
+                                        <td>~$5</td>
+                                        <td>Background scheduling, structural tasks</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="clay-callout" style="margin-top: 2rem;">
+                            Multi-agent pipelines burn tokens quickly — pick tier by how much autonomous coding and browsing you run daily.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="quiz-sec" class="learn-section learn-section--block" aria-labelledby="quiz-heading">
+                <h2 id="quiz-heading" class="learn-block-title">Quick recall quiz</h2>
+                <div class="organic-card card-span organic-card--content">
+                    <div id="quiz-card">
+                        <div id="quiz-container">
+                            <div class="quiz-intro">
+                                <div class="quiz-title">Quick recall</div>
+                                <p style="text-align: center; color: var(--muted-foreground); margin: 0;">Five questions on OpenClaw capabilities from the video notes.</p>
+                                <div class="divider"></div>
+                            </div>
+
+                            <div class="question-box active" id="q-0">
+                                <span class="question-num">Question 1 of 5</span>
+                                <div class="question-text">What core limitation of standard chat UIs does OpenClaw remove by running overnight?</div>
+                                <div class="options-list" role="radiogroup">
+                                    <div class="option-item" tabindex="0" onclick="selectOption(0, 0)"><div class="radio-circle"></div><span>It cannot send messages to Telegram</span></div>
+                                    <div class="option-item" tabindex="0" onclick="selectOption(0, 1)"><div class="radio-circle"></div><span>It executes workflows proactively on a schedule without a live prompt</span></div>
+                                    <div class="option-item" tabindex="0" onclick="selectOption(0, 2)"><div class="radio-circle"></div><span>It only stores the last message in context</span></div>
+                                    <div class="option-item" tabindex="0" onclick="selectOption(0, 3)"><div class="radio-circle"></div><span>It cannot open a web browser</span></div>
+                                </div>
+                            </div>
+
+                            <div class="question-box" id="q-1">
+                                <span class="question-num">Question 2 of 5</span>
+                                <div class="question-text">Which framework does the speaker use for custom interfaces like Second Brain and Mission Control?</div>
+                                <div class="options-list" role="radiogroup">
+                                    <div class="option-item" tabindex="0" onclick="selectOption(1, 0)"><div class="radio-circle"></div><span>Django</span></div>
+                                    <div class="option-item" tabindex="0" onclick="selectOption(1, 1)"><div class="radio-circle"></div><span>Next.js</span></div>
+                                    <div class="option-item" tabindex="0" onclick="selectOption(1, 2)"><div class="radio-circle"></div><span>Vue.js</span></div>
+                                    <div class="option-item" tabindex="0" onclick="selectOption(1, 3)"><div class="radio-circle"></div><span>Flutter</span></div>
+                                </div>
+                            </div>
+
+                            <div class="question-box" id="q-2">
+                                <span class="question-num">Question 3 of 5</span>
+                                <div class="question-text">Which extension mines user complaints on Reddit and X over a rolling 30-day window?</div>
+                                <div class="options-list" role="radiogroup">
+                                    <div class="option-item" tabindex="0" onclick="selectOption(2, 0)"><div class="radio-circle"></div><span>Morning Brief Pro</span></div>
+                                    <div class="option-item" tabindex="0" onclick="selectOption(2, 1)"><div class="radio-circle"></div><span>The &ldquo;Last 30 Days&rdquo; skill by Matt Van Horde</span></div>
+                                    <div class="option-item" tabindex="0" onclick="selectOption(2, 2)"><div class="radio-circle"></div><span>Kanban Master</span></div>
+                                    <div class="option-item" tabindex="0" onclick="selectOption(2, 3)"><div class="radio-circle"></div><span>Mission Control SDK</span></div>
+                                </div>
+                            </div>
+
+                            <div class="question-box" id="q-3">
+                                <span class="question-num">Question 4 of 5</span>
+                                <div class="question-text">In the content factory, what do Quill and Pixel do?</div>
+                                <div class="options-list" role="radiogroup">
+                                    <div class="option-item" tabindex="0" onclick="selectOption(3, 0)"><div class="radio-circle"></div><span>Quill researches; Pixel writes scripts</span></div>
+                                    <div class="option-item" tabindex="0" onclick="selectOption(3, 1)"><div class="radio-circle"></div><span>Quill writes content; Pixel generates visuals</span></div>
+                                    <div class="option-item" tabindex="0" onclick="selectOption(3, 2)"><div class="radio-circle"></div><span>Both agents scrape social feeds</span></div>
+                                    <div class="option-item" tabindex="0" onclick="selectOption(3, 3)"><div class="radio-circle"></div><span>Both schedule the morning brief</span></div>
+                                </div>
+                            </div>
+
+                            <div class="question-box" id="q-4">
+                                <span class="question-num">Question 5 of 5</span>
+                                <div class="question-text">Which model is cited as a ~$10/month budget alternative with strong performance?</div>
+                                <div class="options-list" role="radiogroup">
+                                    <div class="option-item" tabindex="0" onclick="selectOption(4, 0)"><div class="radio-circle"></div><span>Claude 3.5 Opus</span></div>
+                                    <div class="option-item" tabindex="0" onclick="selectOption(4, 1)"><div class="radio-circle"></div><span>MiniMax 2.5</span></div>
+                                    <div class="option-item" tabindex="0" onclick="selectOption(4, 2)"><div class="radio-circle"></div><span>GLM5 only for premium tiers</span></div>
+                                    <div class="option-item" tabindex="0" onclick="selectOption(4, 3)"><div class="radio-circle"></div><span>GPT-4 Turbo</span></div>
+                                </div>
+                            </div>
+
+                            <div id="feedback-panel" class="quiz-feedback">
+                                <strong style="font-family: 'Fraunces', serif; font-size: 1.2rem; display: flex; align-items: center;" id="feedback-title">Result:</strong>
+                                <p style="margin: 0.6rem 0 0 0; font-size: 1.05rem;" id="feedback-text"></p>
+                            </div>
+
+                            <div class="btn-row">
+                                <button id="btn-prev" class="btn-organic btn-secondary-style" onclick="prevQuestion()" disabled><span>← Back</span></button>
+                                <span id="quiz-progress-text" style="font-weight: 700; color: var(--muted-foreground); font-size: 0.95rem;">Question 1/5</span>
+                                <button id="btn-next" class="btn-organic" onclick="nextQuestion()"><span>Next →</span></button>
+                            </div>
+                        </div>
+
+                        <div id="results-container" class="results-box">
+                            <div style="font-family: 'Fraunces', serif; font-size: 2.4rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem;">Check-in complete</div>
+                            <p style="color: var(--muted-foreground); margin: 0;">You finished the OpenClaw recall quiz.</p>
+                            <div class="score-display-ring">
+                                <span class="score-num" id="final-score">0/5</span>
+                                <span class="score-label">Correct</span>
+                            </div>
+                            <div class="commentary" id="score-commentary">Review the use cases tab and try again when ready.</div>
+                            <button class="btn-organic" style="margin-top: 1rem;" onclick="resetQuiz()">Reset quiz</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="study-sec" class="learn-section learn-section--block" aria-labelledby="study-heading">
+                <h2 id="study-heading" class="learn-block-title">Study tools</h2>
+                <div class="organic-card card-span organic-card--content">
+                    <h3 class="section-title" style="margin-bottom: 0.25rem;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect width="18" height="14" x="3" y="5" rx="2"/><path d="M3 10h18"/></svg>
+                        Flashcards
+                    </h3>
+                    <p style="color: var(--muted-foreground); margin: 0 0 0.5rem; font-size: 1rem;">Click or press Enter to flip.</p>
+                    <div class="flashcard-grid">
+                        <button type="button" class="flashcard" onclick="toggleFlashcard(this)" onkeydown="flashcardKey(event, this)">
+                            <div class="flashcard__inner">
+                                <div class="flashcard__face flashcard__face--front">
+                                    <span class="flashcard__label">Term</span>
+                                    <span class="flashcard__term">Vibe coding</span>
+                                </div>
+                                <div class="flashcard__face flashcard__face--back">
+                                    <span class="flashcard__label">Definition</span>
+                                    <p style="margin: 0;">Program via natural language; the agent writes, compiles, debugs, and deploys autonomously.</p>
+                                </div>
+                            </div>
+                        </button>
+                        <button type="button" class="flashcard" onclick="toggleFlashcard(this)" onkeydown="flashcardKey(event, this)">
+                            <div class="flashcard__inner">
+                                <div class="flashcard__face flashcard__face--front">
+                                    <span class="flashcard__label">Term</span>
+                                    <span class="flashcard__term">Proactive task recommendation</span>
+                                </div>
+                                <div class="flashcard__face flashcard__face--back">
+                                    <span class="flashcard__label">Definition</span>
+                                    <p style="margin: 0;">The agent suggests tasks it can run independently from your goals and schedule.</p>
+                                </div>
+                            </div>
+                        </button>
+                        <button type="button" class="flashcard" onclick="toggleFlashcard(this)" onkeydown="flashcardKey(event, this)">
+                            <div class="flashcard__inner">
+                                <div class="flashcard__face flashcard__face--front">
+                                    <span class="flashcard__label">Term</span>
+                                    <span class="flashcard__term">Residual memory integration</span>
+                                </div>
+                                <div class="flashcard__face flashcard__face--back">
+                                    <span class="flashcard__label">Definition</span>
+                                    <p style="margin: 0;">Historical chat context flows into new apps (calendars, notes) the agent builds.</p>
+                                </div>
+                            </div>
+                        </button>
+                        <button type="button" class="flashcard" onclick="toggleFlashcard(this)" onkeydown="flashcardKey(event, this)">
+                            <div class="flashcard__inner">
+                                <div class="flashcard__face flashcard__face--front">
+                                    <span class="flashcard__label">Term</span>
+                                    <span class="flashcard__term">Multi-agent pipeline</span>
+                                </div>
+                                <div class="flashcard__face flashcard__face--back">
+                                    <span class="flashcard__label">Definition</span>
+                                    <p style="margin: 0;">Specialized agents pass outputs down a line — researcher → writer → designer.</p>
+                                </div>
+                            </div>
+                        </button>
+                        <button type="button" class="flashcard" onclick="toggleFlashcard(this)" onkeydown="flashcardKey(event, this)">
+                            <div class="flashcard__inner">
+                                <div class="flashcard__face flashcard__face--front">
+                                    <span class="flashcard__label">Term</span>
+                                    <span class="flashcard__term">Brain dumping</span>
+                                </div>
+                                <div class="flashcard__face flashcard__face--back">
+                                    <span class="flashcard__label">Definition</span>
+                                    <p style="margin: 0;">A large goals/context document that sets how the agent chooses autonomous work.</p>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+
+                    <h3 class="section-title" style="margin-top: 2.5rem;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 3v12M18 9v12M6 15l6-6 6 6"/></svg>
+                        Content factory pipeline
+                    </h3>
+                    <div class="mermaid-diagram" role="figure" aria-labelledby="pipeline-caption">
+                        <div class="mermaid-diagram__canvas">
+                            <pre class="mermaid">flowchart TD
+    web["Web Exploration"]
+    henry["Henry · Research"]
+    research("Curated research data")
+    quill["Quill · Writer"]
+    script("Script &amp; copy")
+    pixel["Pixel · Designer"]
+    thumb("Thumbnail image")
+
+    web --> henry --> research --> quill --> script --> pixel --> thumb
+
+    classDef learnStep fill:#FEFEFA,stroke:#5D7052,stroke-width:2px,color:#2C2C24
+    classDef learnHandoff fill:#E6DCCD,stroke:#C18C5D,stroke-width:2px,color:#4A4A40
+    class web,henry,quill,pixel learnStep
+    class research,script,thumb learnHandoff</pre>
+                        </div>
+                        <p id="pipeline-caption" class="mermaid-diagram__caption">Multi-agent content factory: research → writing → design</p>
+                    </div>
+
+                    <h3 class="section-title" style="margin-top: 2.5rem;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01"/></svg>
+                        Reflection
+                    </h3>
+                    <ol class="reflection-list">
+                        <li><strong>Contextual consolidation:</strong> If your top apps shared one memory pool in a Mission Control built by OpenClaw, how would calendars, journals, and project tools behave differently?</li>
+                        <li><strong>Ethics of autonomy:</strong> What guardrails would you add to an 8:00 AM autonomous task runner so it cannot over-automate without approval?</li>
+                        <li><strong>Economics:</strong> Would a ~$200/mo premium API tier pay for itself in hours saved, or is ~$10/mo (MiniMax 2.5) enough for your workflows?</li>
+                    </ol>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>Study notes derived from <a href="https://www.youtube.com/watch?v=41_TNGDDnfQ" style="color: var(--primary);">Alex Finn&rsquo;s OpenClaw video</a>. Organic layout — soft curves, grain texture, gentle motion.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="/assets/js/learn-nav.js" defer></script>
+    <script>
+        const quizData = [
+            { correctIndex: 1, explanation: "OpenClaw can run scheduled, proactive workflows overnight without waiting for you to send a message." },
+            { correctIndex: 1, explanation: "Custom UIs like Second Brain and Mission Control are repeatedly built with Next.js via vibe coding." },
+            { correctIndex: 1, explanation: "Matt Van Horde's \"Last 30 Days\" skill scrapes social sentiment to find market gaps." },
+            { correctIndex: 1, explanation: "Quill drafts scripts and copy; Pixel produces thumbnails and visual assets." },
+            { correctIndex: 1, explanation: "MiniMax 2.5 is presented as a ~$10/month budget tier for high-volume automation." }
+        ];
+
+        let currentQuestionIndex = 0;
+        let selectedAnswers = Array(quizData.length).fill(null);
+        let completed = false;
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+                btn.setAttribute('aria-selected', 'false');
+            });
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            event.target.classList.add('active');
+            event.target.setAttribute('aria-selected', 'true');
+            document.getElementById('tab-' + tabId).classList.add('active');
+        }
+
+        function toggleFlashcard(el) {
+            el.classList.toggle('is-flipped');
+            el.setAttribute('aria-pressed', el.classList.contains('is-flipped'));
+        }
+
+        function flashcardKey(e, el) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleFlashcard(el);
+            }
+        }
+
+        function selectOption(questionIdx, optionIdx) {
+            if (completed) return;
+            selectedAnswers[questionIdx] = optionIdx;
+            const questionElement = document.getElementById(`q-${questionIdx}`);
+            questionElement.querySelectorAll('.option-item').forEach((el, index) => {
+                el.classList.toggle('selected', index === optionIdx);
+            });
+            showExplanation(questionIdx, optionIdx);
+            updateControls();
+        }
+
+        function showExplanation(questionIdx, chosenIdx) {
+            const data = quizData[questionIdx];
+            const isCorrect = chosenIdx === data.correctIndex;
+            const feedbackPanel = document.getElementById('feedback-panel');
+            const feedbackTitle = document.getElementById('feedback-title');
+            const feedbackText = document.getElementById('feedback-text');
+            if (isCorrect) {
+                feedbackTitle.innerHTML = 'Correct';
+                feedbackTitle.style.color = 'var(--primary)';
+                feedbackText.innerText = data.explanation;
+            } else {
+                feedbackTitle.innerHTML = 'Not quite';
+                feedbackTitle.style.color = 'var(--destructive)';
+                feedbackText.innerText = data.explanation;
+            }
+            feedbackPanel.classList.add('show');
+        }
+
+        function updateControls() {
+            document.getElementById('btn-prev').disabled = currentQuestionIndex === 0;
+            document.getElementById('quiz-progress-text').innerText = `Question ${currentQuestionIndex + 1}/${quizData.length}`;
+            document.getElementById('btn-next').innerHTML = currentQuestionIndex === quizData.length - 1
+                ? '<span>Finish</span>'
+                : '<span>Next →</span>';
+        }
+
+        function prevQuestion() {
+            if (currentQuestionIndex === 0) return;
+            document.getElementById(`q-${currentQuestionIndex}`).classList.remove('active');
+            currentQuestionIndex--;
+            document.getElementById(`q-${currentQuestionIndex}`).classList.add('active');
+            const chosen = selectedAnswers[currentQuestionIndex];
+            if (chosen !== null) showExplanation(currentQuestionIndex, chosen);
+            else document.getElementById('feedback-panel').classList.remove('show');
+            updateControls();
+        }
+
+        function nextQuestion() {
+            if (selectedAnswers[currentQuestionIndex] === null) {
+                const feedbackPanel = document.getElementById('feedback-panel');
+                document.getElementById('feedback-title').innerHTML = 'Pick an answer';
+                document.getElementById('feedback-title').style.color = 'var(--destructive)';
+                document.getElementById('feedback-text').innerText = 'Select an option before continuing.';
+                feedbackPanel.classList.add('show');
+                return;
+            }
+            if (currentQuestionIndex < quizData.length - 1) {
+                document.getElementById(`q-${currentQuestionIndex}`).classList.remove('active');
+                currentQuestionIndex++;
+                document.getElementById(`q-${currentQuestionIndex}`).classList.add('active');
+                const chosen = selectedAnswers[currentQuestionIndex];
+                if (chosen !== null) showExplanation(currentQuestionIndex, chosen);
+                else document.getElementById('feedback-panel').classList.remove('show');
+                updateControls();
+            } else {
+                calculateFinalAssessment();
+            }
+        }
+
+        function calculateFinalAssessment() {
+            let score = 0;
+            quizData.forEach((q, i) => { if (selectedAnswers[i] === q.correctIndex) score++; });
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('results-container').classList.add('active');
+            document.getElementById('final-score').innerText = `${score}/${quizData.length}`;
+            const commentaryEl = document.getElementById('score-commentary');
+            if (score === quizData.length) {
+                commentaryEl.innerText = 'Perfect — you have the OpenClaw workflow map down.';
+            } else if (score >= 3) {
+                commentaryEl.innerText = 'Solid grasp. Skim the use cases and prompts tabs for gaps.';
+            } else {
+                commentaryEl.innerText = 'Revisit the overview and video, then retry the quiz.';
+            }
+            completed = true;
+        }
+
+        function resetQuiz() {
+            currentQuestionIndex = 0;
+            selectedAnswers = Array(quizData.length).fill(null);
+            completed = false;
+            document.getElementById('quiz-container').style.display = 'block';
+            document.getElementById('results-container').classList.remove('active');
+            document.getElementById('feedback-panel').classList.remove('show');
+            document.querySelectorAll('.option-item').forEach(el => el.classList.remove('selected'));
+            document.querySelectorAll('.question-box').forEach((box, i) => box.classList.toggle('active', i === 0));
+            updateControls();
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.0/dist/mermaid.min.js" defer></script>
+    <script src="/assets/js/learn-mermaid.js" defer></script>
+</body>
+</html>

@@ -43,8 +43,16 @@ Open http://localhost:3000 (serve) or :4000 (python).
 | `/` | `index.html` |
 | `/learn/` | `learn/index.html` (article index) |
 | `/learn/clean-vs-vertical-slice/` | `learn/clean-vs-vertical-slice/index.html` |
+| `/learn/openclaw-use-cases/` | `learn/openclaw-use-cases/index.html` (from `assets/contents/openclaw-use-cases.md`) |
 
-Shared learn UI: `assets/css/learn.css` (from `styles/_learn.scss`, `styles/_learn-article.scss`), `assets/js/learn-nav.js`.
+Shared learn UI: `assets/css/learn.css` (from `styles/_learn.scss`, `styles/_learn-article.scss`, `styles/_learn-mermaid.scss`), `assets/js/learn-nav.js`, `assets/js/learn-mermaid.js`.
+
+**Mermaid diagrams** (any learn article): wrap in `.mermaid-diagram` / `.mermaid-diagram__canvas`, use `<pre class="mermaid">` for the chart, load Mermaid 11 CDN then `learn-mermaid.js`. Optional node styles — append to diagram source:
+
+```
+classDef learnStep fill:#FEFEFA,stroke:#5D7052,stroke-width:2px,color:#2C2C24
+classDef learnHandoff fill:#E6DCCD,stroke:#C18C5D,stroke-width:2px,color:#4A4A40
+```
 
 Add pages as `some/path/index.html` for clean URLs without `.html`.
 

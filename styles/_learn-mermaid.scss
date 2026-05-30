@@ -1,0 +1,87 @@
+@import "tokens";
+
+// Organic Mermaid — shared across learn articles (see assets/js/learn-mermaid.js)
+body.learn-page .mermaid-diagram {
+  margin: 1.25rem 0 0;
+  padding: 0;
+  background-color: rgba($color-card, 0.95);
+  border: 1px solid rgba($color-border, 0.6);
+  border-radius: $radius-2xl;
+  box-shadow: $shadow-moss;
+  overflow: hidden;
+}
+
+body.learn-page .mermaid-diagram__canvas {
+  padding: 1.75rem 1.25rem;
+  background: linear-gradient(
+    180deg,
+    rgba($color-muted, 0.45) 0%,
+    rgba($color-background, 0.2) 100%
+  );
+  overflow-x: auto;
+  text-align: center;
+
+  pre.mermaid,
+  .mermaid {
+    margin: 0 auto;
+    padding: 0;
+    background: transparent;
+    border: none;
+    font-family: inherit;
+    white-space: normal;
+    display: inline-block;
+    min-width: min(100%, 20rem);
+
+    &[data-processed="true"] {
+      font-size: 0;
+      line-height: 0;
+      color: transparent;
+    }
+  }
+
+  svg {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .node rect,
+  .node circle,
+  .node ellipse,
+  .node path {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .edgePath .path {
+    stroke: $color-primary;
+    stroke-width: 2px;
+  }
+
+  .marker {
+    fill: $color-primary;
+    stroke: $color-primary;
+  }
+
+  .label {
+    font-family: $font-body;
+    color: $color-foreground;
+  }
+
+  .node .label {
+    font-family: $font-body;
+    font-weight: 600;
+  }
+}
+
+body.learn-page .mermaid-diagram__caption {
+  margin: 0;
+  padding: 1rem 1.5rem 1.25rem;
+  font-size: 0.95rem;
+  color: $color-muted-foreground;
+  font-style: italic;
+  text-align: center;
+  border-top: 1px solid rgba($color-border, 0.55);
+  background-color: rgba($color-muted, 0.25);
+}
