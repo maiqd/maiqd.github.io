@@ -1,498 +1,249 @@
         <header id="overview-sec" class="learn-section">
-            <h1>Architectural <em>Sanctuary</em></h1>
-            <div class="subtitle">A serene space mapping out Clean vs. Vertical Slice Architecture. Let your designs breathe.</div>
+            <h1>Clean vs. Vertical <em>Slice</em></h1>
+            <div class="subtitle">Reconciling dependency direction with feature organization — study notes from Steve Smith (Ardalis).</div>
             <div class="author-tag">
-                Inspired by Steve Smith (Ardalis): &ldquo;Nick Chapsas Is Right About Clean Architecture (Mostly)&rdquo;
+                From Steve Smith (Ardalis): &ldquo;Nick Chapsas Is Right About Clean Architecture (Mostly)&rdquo;
             </div>
         </header>
 
-        <main class="layout-grid">
-            
-            <!-- Left Column: Instructional Media and Architecture Documents -->
-            <section id="takeaways-sec" class="learn-section">
-                <!-- Premium Media Container Card -->
+        <main class="layout-grid layout-grid--stacked">
+
+            <section id="content-sec" class="learn-section learn-section--primary">
                 <div id="video-sec" class="video-wrapper learn-section">
                     <div class="video-container">
                         <iframe id="yt-player" src="https://www.youtube.com/embed/Z0JpNexRxvs?enablejsapi=1" title="Nick Chapsas Is Right About Clean Architecture (Mostly)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
-                    <div class="video-caption">📍 Click timeline checkpoints below to jump inside the lecture</div>
+                    <div class="video-caption">Source video — study notes and quiz below</div>
                 </div>
 
-                <!-- Asymmetric Architecture Card (Left curve accent) -->
-                <div class="organic-card card-left">
+                <div class="organic-card card-span organic-card--content">
                     <div class="tab-btn-group" role="tablist">
-                        <button class="tab-btn active" role="tab" aria-selected="true" onclick="switchTab('takeaways')">🌿 Core Principles</button>
-                        <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab('timestamps')">⏱ Milestones</button>
-                        <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab('philosophy')">🏺 The Balance</button>
+                        <button class="tab-btn active" role="tab" aria-selected="true" onclick="switchTab('concepts')">Core concepts</button>
+                        <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab('layouts')">.NET layouts</button>
+                        <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab('monoliths')">Modular monoliths</button>
                     </div>
 
-                    <!-- Takeaways Tab Content -->
-                    <div id="tab-takeaways" class="tab-content active" role="tabpanel">
+                    <div id="tab-concepts" class="tab-content active" role="tabpanel">
                         <h2 class="section-title">
                             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10M6 10h10"/></svg>
-                            Key Architect Insights
+                            Core architecture concepts
+                        </h2>
+                        <p style="margin-top: -0.5rem; color: var(--muted-foreground); font-style: italic;">
+                            Clean and Vertical Slice address different dimensions — not opposing forces.
+                        </p>
+                        <ul class="bullet-list">
+                            <li><strong>Clean Architecture (true intent):</strong> About <em>dependency direction</em> — protecting business logic from external dependencies, isolating infrastructure, and enforcing boundaries. Not defined by folder structure or a fixed number of projects.</li>
+                            <li><strong>Vertical Slice Architecture:</strong> Organized around features rather than technical layers. When implementing a feature (e.g. Orders), UI, logic, and endpoint-specific types stay contextually close together.</li>
+                            <li><strong>The coexistence myth:</strong> These patterns are not opposing. Feature organization answers <em>where to find code</em>; dependency management answers <em>what is allowed to depend on what</em>.</li>
+                        </ul>
+                    </div>
+
+                    <div id="tab-layouts" class="tab-content" role="tabpanel">
+                        <h2 class="section-title">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
+                            Evolution of .NET project layouts
                         </h2>
                         <ul class="bullet-list">
-                            <li><strong>The Core of Clean Architecture:</strong> Keeping core business Domain rules completely decoupled from external UI, databases, and third-party framework details.</li>
-                            <li><strong>The 1-to-1 Interface Trap:</strong> Creating interfaces for literally every single service (e.g. <code>IUserService</code> for only one <code>UserService</code>) is often unnecessary overhead unless mocked dynamically in unit tests.</li>
-                            <li><strong>Vertical Slice Alternative:</strong> Group files by business features (e.g., <code>Features/Orders/CreateOrder.cs</code>) rather than logical layers. Features operate independently and bypass rigid multi-tiered abstraction if overkill.</li>
-                            <li><strong>MediatR & REPR:</strong> MediatR is useful for decoupling vertical handler flows, but you can achieve modular architecture safely using direct <em>Request-Endpoint-Response (REPR)</em> structures.</li>
-                            <li><strong>The Hybrid Approach:</strong> Combine templates! Use modular monolith boundaries for clean domains, but leverage feature slices internally for optimal speed.</li>
+                            <li><strong>The over-engineered era:</strong> .NET solutions often grew into heavily layered templates (6+ projects, sometimes hundreds). Developers hopped through multiple projects just to complete a single feature.</li>
+                            <li><strong>The minimal shift:</strong> Steve Smith&rsquo;s &ldquo;Minimal Clean&rdquo; template — inspired by Minimal APIs — collapses technical layers into fewer projects (even a single web project) while maintaining strict architectural boundaries.</li>
+                            <li><strong>LLM &amp; developer locality:</strong> Grouping related elements together reduces scrolling friction for humans and gives AI coding agents a more consistent, discoverable context.</li>
                         </ul>
+                        <div class="clay-callout" style="margin-top: 1.5rem;">
+                            Classic Clean Architecture relied on multi-project solutions to physically enforce boundaries. Minimal Clean consolidates into fewer projects and uses namespaces, folder scoping, or dependency checkers instead.
+                        </div>
                     </div>
 
-                    <!-- Timestamps Tab Content -->
-                    <div id="tab-timestamps" class="tab-content" role="tabpanel">
-                        <h2 class="section-title">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                            Timeline Checkpoints
-                        </h2>
-                        <p style="font-size: 1.1rem; margin-top: -0.5rem; font-style: italic; color: var(--muted-foreground); margin-bottom: 2rem;">Click a timestamp badge to seek the media directly to that moment.</p>
-                        <ul class="timeline-list">
-                            <li>
-                                <span class="timestamp-badge" onclick="seekVideo(0)">00:00</span>
-                                <strong>Intro & Context:</strong> Responding to Nick Chapsas's critique of architecture templates.
-                            </li>
-                            <li>
-                                <span class="timestamp-badge" onclick="seekVideo(195)">03:15</span>
-                                <strong>Clean Architecture Core:</strong> Visualizing dependency flow and why decoupling matters.
-                            </li>
-                            <li>
-                                <span class="timestamp-badge" onclick="seekVideo(525)">08:45</span>
-                                <strong>The Interface Antipattern:</strong> Explaining why 1-to-1 interfaces dilute architecture value.
-                            </li>
-                            <li>
-                                <span class="timestamp-badge" onclick="seekVideo(860)">14:20</span>
-                                <strong>Vertical Slices Defined:</strong> Visualizing features as distinct, horizontal slices.
-                            </li>
-                            <li>
-                                <span class="timestamp-badge" onclick="seekVideo(1195)">19:55</span>
-                                <strong>MediatR vs REPR:</strong> Simplifying APIs with FastEndpoints and Minimal APIs.
-                            </li>
-                            <li>
-                                <span class="timestamp-badge" onclick="seekVideo(1420)">23:40</span>
-                                <strong>Cohesion vs Coupling:</strong> Steve's ultimate summary on balancing speed and design cleanlines.
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Philosophy Tab Content -->
-                    <div id="tab-philosophy" class="tab-content" role="tabpanel">
+                    <div id="tab-monoliths" class="tab-content" role="tabpanel">
                         <h2 class="section-title">
                             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                            The Balancing Act
+                            The rise of modular monoliths
                         </h2>
-                        <p>
-                            Software developers are caught in an eternal cycle of balancing <strong>Architecture Velocity</strong> against <strong>Future-Proofing</strong>.
-                        </p>
-                        <div class="clay-callout">
-                            <strong>Steve Smith's Reflection:</strong><br>
-                            <em>&ldquo;Clean Architecture has higher upfront costs but offers lower long-term maintenance friction. Vertical Slices grant rapid initial velocity but require strict logical boundaries to prevent spaghetti code as domains expand.&rdquo;</em>
+                        <ul class="bullet-list">
+                            <li><strong>Microservices fatigue:</strong> Many organizations adopted microservices for team boundaries, not technical scale — then paid an operational tax in network hops and distributed complexity.</li>
+                            <li><strong>Modular monoliths:</strong> Group code around distinct business capabilities (billing, reporting, user management) with strict boundaries and public contracts inside a single deployable unit or monorepo.</li>
+                            <li><strong>Pragmatic boundaries:</strong> Modules stay autonomous but co-located — easy navigation, independent feature scaling, and a clean path to microservices only when a true technical need arises.</li>
+                        </ul>
+                        <div class="clay-callout" style="margin-top: 1.5rem;">
+                            Jumping straight to microservices enforces boundaries via network isolation. A modular monolith achieves the same encapsulation with language features inside one executable — skipping the operational tax until distribution is actually required.
                         </div>
-                        <p>
-                            Choosing the correct blueprint should not be a dogmatic battle. Real-world solutions prioritize decoupling hot path workflows into high-velocity modules while preserving a clean core domain.
-                        </p>
                     </div>
                 </div>
             </section>
 
-            <!-- Right Column: Premium Architectural Assessment Module -->
-            <section id="quiz-sec" class="learn-section">
-                <div id="quiz-card" class="organic-card card-right" style="min-height: 580px; display: flex; flex-direction: column; justify-content: space-between;">
-                    
-                    <!-- Main Quiz Wrapper -->
-                    <div id="quiz-container">
-                        <div class="quiz-intro">
-                            <div class="quiz-title">📐 Check Your Design Instincts</div>
-                            <p style="text-align: center; color: var(--muted-foreground); margin: 0;">Validate your domain design choices using our integrated 15-question architectural checkup.</p>
-                            <div class="divider"></div>
-                        </div>
+            <section id="quiz-sec" class="learn-section learn-section--block" aria-labelledby="quiz-heading">
+                <h2 id="quiz-heading" class="learn-block-title">Quick recall quiz</h2>
+                <div class="organic-card card-span organic-card--content">
+                    <div id="quiz-card">
+                        <div id="quiz-container">
+                            <div class="quiz-intro">
+                                <div class="quiz-title">Quick recall</div>
+                                <p style="text-align: center; color: var(--muted-foreground); margin: 0;">Five questions on Clean vs. Vertical Slice from the video notes.</p>
+                                <div class="divider"></div>
+                            </div>
 
-                        <!-- Question 1 -->
-                        <div class="question-box active" id="q-0">
-                            <span class="question-num">Question 1 of 15</span>
-                            <div class="question-text">What is the central focus or primary layer of Clean Architecture according to Steve Smith?</div>
-                            <div class="options-list" role="radiogroup">
-                                <div class="option-item" tabindex="0" onclick="selectOption(0, 0)">
-                                    <div class="radio-circle"></div>
-                                    <span>The Database (Infrastructure Layer)</span>
+                            <div class="question-box active" id="q-0">
+                                <span class="question-num">Question 1 of 5</span>
+                                <div class="question-text">According to Ardalis, what is the fundamental core purpose of Clean Architecture?</div>
+                                <div class="options-list" role="radiogroup">
+                                    <div class="option-item" tabindex="0" onclick="selectOption(0, 0)"><div class="radio-circle"></div><span>Enforcing a strict folder structure from 2018</span></div>
+                                    <div class="option-item" tabindex="0" onclick="selectOption(0, 1)"><div class="radio-circle"></div><span>Splitting every application into at least 6 separate .NET projects</span></div>
+                                    <div class="option-item" tabindex="0" onclick="selectOption(0, 2)"><div class="radio-circle"></div><span>Managing dependency direction, isolating infrastructure, and protecting business logic</span></div>
+                                    <div class="option-item" tabindex="0" onclick="selectOption(0, 3)"><div class="radio-circle"></div><span>Ensuring MediatR is utilized for all internal command dispatches</span></div>
                                 </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(0, 1)">
-                                    <div class="radio-circle"></div>
-                                    <span>The Core Business Domain rules (Domain Layer)</span>
+                            </div>
+
+                            <div class="question-box" id="q-1">
+                                <span class="question-num">Question 2 of 5</span>
+                                <div class="question-text">Which architectural dimension directly answers the question: &ldquo;Where do I find the code?&rdquo;</div>
+                                <div class="options-list" role="radiogroup">
+                                    <div class="option-item" tabindex="0" onclick="selectOption(1, 0)"><div class="radio-circle"></div><span>Dependency management</span></div>
+                                    <div class="option-item" tabindex="0" onclick="selectOption(1, 1)"><div class="radio-circle"></div><span>Feature organization</span></div>
+                                    <div class="option-item" tabindex="0" onclick="selectOption(1, 2)"><div class="radio-circle"></div><span>Code reuse</span></div>
+                                    <div class="option-item" tabindex="0" onclick="selectOption(1, 3)"><div class="radio-circle"></div><span>Infrastructure isolation</span></div>
                                 </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(0, 2)">
-                                    <div class="radio-circle"></div>
-                                    <span>The UI Controller endpoints (Presentation Layer)</span>
+                            </div>
+
+                            <div class="question-box" id="q-2">
+                                <span class="question-num">Question 3 of 5</span>
+                                <div class="question-text">What technical debt did traditional, deeply layered architectures introduce when adding a single feature?</div>
+                                <div class="options-list" role="radiogroup">
+                                    <div class="option-item" tabindex="0" onclick="selectOption(2, 0)"><div class="radio-circle"></div><span>Project hopping and constant directory scrolling to update UI, Business, and Data layers</span></div>
+                                    <div class="option-item" tabindex="0" onclick="selectOption(2, 1)"><div class="radio-circle"></div><span>Incompatibility with Entity Framework Core</span></div>
+                                    <div class="option-item" tabindex="0" onclick="selectOption(2, 2)"><div class="radio-circle"></div><span>Forced migration to cloud-native microservices</span></div>
+                                    <div class="option-item" tabindex="0" onclick="selectOption(2, 3)"><div class="radio-circle"></div><span>Failure of compiler-level dependency validation</span></div>
                                 </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(0, 3)">
-                                    <div class="radio-circle"></div>
-                                    <span>The Third-Party API clients</span>
+                            </div>
+
+                            <div class="question-box" id="q-3">
+                                <span class="question-num">Question 4 of 5</span>
+                                <div class="question-text">Why does keeping a system inside a modular monorepo benefit modern AI-driven development agents?</div>
+                                <div class="options-list" role="radiogroup">
+                                    <div class="option-item" tabindex="0" onclick="selectOption(3, 0)"><div class="radio-circle"></div><span>AI agents cannot interpret distributed network calls</span></div>
+                                    <div class="option-item" tabindex="0" onclick="selectOption(3, 1)"><div class="radio-circle"></div><span>Locality and structural consistency allow LLMs to discover relevant context and generate accurate code</span></div>
+                                    <div class="option-item" tabindex="0" onclick="selectOption(3, 2)"><div class="radio-circle"></div><span>AI agents only function if code is written inside a single project file</span></div>
+                                    <div class="option-item" tabindex="0" onclick="selectOption(3, 3)"><div class="radio-circle"></div><span>It eliminates the need for compilation tools like RipGrep</span></div>
                                 </div>
+                            </div>
+
+                            <div class="question-box" id="q-4">
+                                <span class="question-num">Question 5 of 5</span>
+                                <div class="question-text">What is a primary reason organizations reach for microservices when a Modular Monolith could suffice?</div>
+                                <div class="options-list" role="radiogroup">
+                                    <div class="option-item" tabindex="0" onclick="selectOption(4, 0)"><div class="radio-circle"></div><span>Microservices inherently run faster</span></div>
+                                    <div class="option-item" tabindex="0" onclick="selectOption(4, 1)"><div class="radio-circle"></div><span>To solve organizational/team separation problems rather than strict technical scaling requirements</span></div>
+                                    <div class="option-item" tabindex="0" onclick="selectOption(4, 2)"><div class="radio-circle"></div><span>Because Entity Framework does not support shared databases</span></div>
+                                    <div class="option-item" tabindex="0" onclick="selectOption(4, 3)"><div class="radio-circle"></div><span>Microservices eliminate the need for domain boundaries</span></div>
+                                </div>
+                            </div>
+
+                            <div id="feedback-panel" class="quiz-feedback">
+                                <strong style="font-family: 'Fraunces', serif; font-size: 1.2rem; display: flex; align-items: center;" id="feedback-title">Result:</strong>
+                                <p style="margin: 0.6rem 0 0 0; font-size: 1.05rem;" id="feedback-text"></p>
+                            </div>
+
+                            <div class="btn-row">
+                                <button id="btn-prev" class="btn-organic btn-secondary-style" onclick="prevQuestion()" disabled><span>← Back</span></button>
+                                <span id="quiz-progress-text" style="font-weight: 700; color: var(--muted-foreground); font-size: 0.95rem;">Question 1/5</span>
+                                <button id="btn-next" class="btn-organic" onclick="nextQuestion()"><span>Next →</span></button>
                             </div>
                         </div>
 
-                        <!-- Question 2 -->
-                        <div class="question-box" id="q-1">
-                            <span class="question-num">Question 2 of 15</span>
-                            <div class="question-text">Vertical Slice Architecture advocates for grouping file structures by logical layers (Controllers, Repositories) rather than feature workflows.</div>
-                            <div class="options-list" role="radiogroup">
-                                <div class="option-item" tabindex="0" onclick="selectOption(1, 0)">
-                                    <div class="radio-circle"></div>
-                                    <span>True</span>
-                                </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(1, 1)">
-                                    <div class="radio-circle"></div>
-                                    <span>False</span>
-                                </div>
+                        <div id="results-container" class="results-box">
+                            <div style="font-family: 'Fraunces', serif; font-size: 2.4rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem;">Check-in complete</div>
+                            <p style="color: var(--muted-foreground); margin: 0;">You finished the architecture recall quiz.</p>
+                            <div class="score-display-ring">
+                                <span class="score-num" id="final-score">0/5</span>
+                                <span class="score-label">Correct</span>
                             </div>
-                        </div>
-
-                        <!-- Question 3 -->
-                        <div class="question-box" id="q-2">
-                            <span class="question-num">Question 3 of 15</span>
-                            <div class="question-text">What does the design pattern acronym "REPR" stand for as discussed in the context of Minimal APIs?</div>
-                            <div class="options-list" role="radiogroup">
-                                <div class="option-item" tabindex="0" onclick="selectOption(2, 0)">
-                                    <div class="radio-circle"></div>
-                                    <span>Repository-Entity-Processor-Repository</span>
-                                </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(2, 1)">
-                                    <div class="radio-circle"></div>
-                                    <span>Request-Endpoint-Response</span>
-                                </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(2, 2)">
-                                    <div class="radio-circle"></div>
-                                    <span>Redirect-Execution-Parameter-Return</span>
-                                </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(2, 3)">
-                                    <div class="radio-circle"></div>
-                                    <span>Remote-Entity-Proxy-Route</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Question 4 -->
-                        <div class="question-box" id="q-3">
-                            <span class="question-num">Question 4 of 15</span>
-                            <div class="question-text">Does Steve Smith (Ardalis) agree that always creating a matching Interface for every single internal Service class can become unnecessary boilerplate?</div>
-                            <div class="options-list" role="radiogroup">
-                                <div class="option-item" tabindex="0" onclick="selectOption(3, 0)">
-                                    <div class="radio-circle"></div>
-                                    <span>Yes, he mostly agrees it's overused boilerplate.</span>
-                                </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(3, 1)">
-                                    <div class="radio-circle"></div>
-                                    <span>No, he insists interfaces are mandatory for every class.</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Question 5 -->
-                        <div class="question-box" id="q-4">
-                            <span class="question-num">Question 5 of 15</span>
-                            <div class="question-text">What architectural style organizes cohesive features into isolated modules inside a single process/executable to ease scaling boundaries?</div>
-                            <div class="options-list" role="radiogroup">
-                                <div class="option-item" tabindex="0" onclick="selectOption(4, 0)">
-                                    <div class="radio-circle"></div>
-                                    <span>Spaghetti Architecture</span>
-                                </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(4, 1)">
-                                    <div class="radio-circle"></div>
-                                    <span>Layered DB-First Setup</span>
-                                </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(4, 2)">
-                                    <div class="radio-circle"></div>
-                                    <span>Modular Monolith</span>
-                                </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(4, 3)">
-                                    <div class="radio-circle"></div>
-                                    <span>Strict Desktop Single Client</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Question 6 -->
-                        <div class="question-box" id="q-5">
-                            <span class="question-num">Question 6 of 15</span>
-                            <div class="question-text">Why do developers frequently create a 1-to-1 interface relationship for internal services?</div>
-                            <div class="options-list" role="radiogroup">
-                                <div class="option-item" tabindex="0" onclick="selectOption(5, 0)">
-                                    <div class="radio-circle"></div>
-                                    <span>To satisfy direct database execution performance checks</span>
-                                </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(5, 1)">
-                                    <div class="radio-circle"></div>
-                                    <span>Because compilers fail without matching interfaces</span>
-                                </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(5, 2)">
-                                    <div class="radio-circle"></div>
-                                    <span>Under the false assumption that all unit testing requires mocking every single layer</span>
-                                </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(5, 3)">
-                                    <div class="radio-circle"></div>
-                                    <span>To support multiple cloud databases simultaneously</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Question 7 -->
-                        <div class="question-box" id="q-6">
-                            <span class="question-num">Question 7 of 15</span>
-                            <div class="question-text">In a traditional 3-tier Layered Architecture, which component acts as the foundational root that other tiers depend on?</div>
-                            <div class="options-list" role="radiogroup">
-                                <div class="option-item" tabindex="0" onclick="selectOption(6, 0)">
-                                    <div class="radio-circle"></div>
-                                    <span>The Core Business Entities</span>
-                                </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(6, 1)">
-                                    <div class="radio-circle"></div>
-                                    <span>The UI Presentation Component</span>
-                                </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(6, 2)">
-                                    <div class="radio-circle"></div>
-                                    <span>The Database / Infrastructure Schema</span>
-                                </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(6, 3)">
-                                    <div class="radio-circle"></div>
-                                    <span>The Identity Provider microservice</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Question 8 -->
-                        <div class="question-box" id="q-7">
-                            <span class="question-num">Question 8 of 15</span>
-                            <div class="question-text">Which component/design guideline suggests that "classes that change together should be packaged together"?</div>
-                            <div class="options-list" role="radiogroup">
-                                <div class="option-item" tabindex="0" onclick="selectOption(7, 0)">
-                                    <div class="radio-circle"></div>
-                                    <span>Liskov Substitution Principle</span>
-                                </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(7, 1)">
-                                    <div class="radio-circle"></div>
-                                    <span>Common Closure Principle</span>
-                                </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(7, 2)">
-                                    <div class="radio-circle"></div>
-                                    <span>Open-Closed Principle</span>
-                                </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(7, 3)">
-                                    <div class="radio-circle"></div>
-                                    <span>Interface Segregation Principle</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Question 9 -->
-                        <div class="question-box" id="q-8">
-                            <span class="question-num">Question 9 of 15</span>
-                            <div class="question-text">What is the primary role of using the MediatR library within an API endpoint?</div>
-                            <div class="options-list" role="radiogroup">
-                                <div class="option-item" tabindex="0" onclick="selectOption(8, 0)">
-                                    <div class="radio-circle"></div>
-                                    <span>To map relational SQL data tables to entities</span>
-                                </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(8, 1)">
-                                    <div class="radio-circle"></div>
-                                    <span>To decouple controllers from their specific execution handlers</span>
-                                </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(8, 2)">
-                                    <div class="radio-circle"></div>
-                                    <span>To automate API key validation steps</span>
-                                </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(8, 3)">
-                                    <div class="radio-circle"></div>
-                                    <span>To scale network socket gateways</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Question 10 -->
-                        <div class="question-box" id="q-9">
-                            <span class="question-num">Question 10 of 15</span>
-                            <div class="question-text">What is a major risk of Vertical Slice Architecture if cross-feature boundaries are left unmonitored?</div>
-                            <div class="options-list" role="radiogroup">
-                                <div class="option-item" tabindex="0" onclick="selectOption(9, 0)">
-                                    <div class="radio-circle"></div>
-                                    <span>High, bloated initial project configurations</span>
-                                </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(9, 1)">
-                                    <div class="radio-circle"></div>
-                                    <span>Inability to utilize modern SQL frameworks</span>
-                                </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(9, 2)">
-                                    <div class="radio-circle"></div>
-                                    <span>Code degrading into tight spaghetti dependencies across features</span>
-                                </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(9, 3)">
-                                    <div class="radio-circle"></div>
-                                    <span>Slower CPU initialization during deployment bootups</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Question 11 -->
-                        <div class="question-box" id="q-10">
-                            <span class="question-num">Question 11 of 15</span>
-                            <div class="question-text">Which of the following describes a direct advantage of core Domain isolation?</div>
-                            <div class="options-list" role="radiogroup">
-                                <div class="option-item" tabindex="0" onclick="selectOption(10, 0)">
-                                    <div class="radio-circle"></div>
-                                    <span>It facilitates rapid direct layout coding speeds</span>
-                                </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(10, 1)">
-                                    <div class="radio-circle"></div>
-                                    <span>Business rules can be fully unit-tested independently without mocking infrastructure</span>
-                                </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(10, 2)">
-                                    <div class="radio-circle"></div>
-                                    <span>It couples DB connections straight into UI views</span>
-                                </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(10, 3)">
-                                    <div class="radio-circle"></div>
-                                    <span>It skips logic patterns to ship endpoints instantly</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Question 12 -->
-                        <div class="question-box" id="q-11">
-                            <span class="question-num">Question 12 of 15</span>
-                            <div class="question-text">In a Modular Monolith, how should modules ideally interact to preserve boundaries?</div>
-                            <div class="options-list" role="radiogroup">
-                                <div class="option-item" tabindex="0" onclick="selectOption(11, 0)">
-                                    <div class="radio-circle"></div>
-                                    <span>By executing cross-database joins directly</span>
-                                </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(11, 1)">
-                                    <div class="radio-circle"></div>
-                                    <span>By querying standard private local helper classes</span>
-                                </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(11, 2)">
-                                    <div class="radio-circle"></div>
-                                    <span>By utilizing public interfaces or in-memory messaging events</span>
-                                </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(11, 3)">
-                                    <div class="radio-circle"></div>
-                                    <span>They must avoid talking to each other altogether</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Question 13 -->
-                        <div class="question-box" id="q-12">
-                            <span class="question-num">Question 13 of 15</span>
-                            <div class="question-text">What does the term "Architecture Velocity" refer to in project life-cycles?</div>
-                            <div class="options-list" role="radiogroup">
-                                <div class="option-item" tabindex="0" onclick="selectOption(12, 0)">
-                                    <div class="radio-circle"></div>
-                                    <span>The network request speeds of backend setups</span>
-                                </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(12, 1)">
-                                    <div class="radio-circle"></div>
-                                    <span>The sustainable rate at which teams can release clean business features over time</span>
-                                </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(12, 2)">
-                                    <div class="radio-circle"></div>
-                                    <span>The speed of automated compiler packaging procedures</span>
-                                </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(12, 3)">
-                                    <div class="radio-circle"></div>
-                                    <span>The database query execution velocity measurements</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Question 14 -->
-                        <div class="question-box" id="q-13">
-                            <span class="question-num">Question 14 of 15</span>
-                            <div class="question-text">Why might an architect design a "hybrid model" fanning aspects of Clean and Slice styles?</div>
-                            <div class="options-list" role="radiogroup">
-                                <div class="option-item" tabindex="0" onclick="selectOption(13, 0)">
-                                    <div class="radio-circle"></div>
-                                    <span>To intentionally degrade network routing protocols</span>
-                                </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(13, 1)">
-                                    <div class="radio-circle"></div>
-                                    <span>To shield complex Core rules safely while processing request payloads with highly focused slices</span>
-                                </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(13, 2)">
-                                    <div class="radio-circle"></div>
-                                    <span>To satisfy contradictory external vendor agreements</span>
-                                </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(13, 3)">
-                                    <div class="radio-circle"></div>
-                                    <span>Because their frameworks mandate strict layered structures</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Question 15 -->
-                        <div class="question-box" id="q-14">
-                            <span class="question-num">Question 15 of 15</span>
-                            <div class="question-text">Nick Chapsas is "mostly right" according to Steve. What is the key critique they both align on?</div>
-                            <div class="options-list" role="radiogroup">
-                                <div class="option-item" tabindex="0" onclick="selectOption(14, 0)">
-                                    <div class="radio-circle"></div>
-                                    <span>That Clean Architecture offers no long-term value whatsoever</span>
-                                </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(14, 1)">
-                                    <div class="radio-circle"></div>
-                                    <span>That rigid Clean Architecture templates frequently introduce excessive boilerplate projects and redundant abstractions</span>
-                                </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(14, 2)">
-                                    <div class="radio-circle"></div>
-                                    <span>That database concerns should be positioned in the center</span>
-                                </div>
-                                <div class="option-item" tabindex="0" onclick="selectOption(14, 3)">
-                                    <div class="radio-circle"></div>
-                                    <span>That developers should avoid writing modular boundaries entirely</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Soft Tinted Live Feedback Panel -->
-                        <div id="feedback-panel" class="quiz-feedback">
-                            <strong style="font-family: 'Fraunces', serif; font-size: 1.2rem; display: flex; align-items: center;" id="feedback-title">Result:</strong>
-                            <p style="margin: 0.6rem 0 0 0; font-size: 1.05rem;" id="feedback-text"></p>
-                        </div>
-
-                        <!-- Control Action Row -->
-                        <div class="btn-row">
-                            <button id="btn-prev" class="btn-organic btn-secondary-style" onclick="prevQuestion()" disabled>
-                                <span>← Back</span>
-                            </button>
-                            <span id="quiz-progress-text" style="font-weight: 700; color: var(--muted-foreground); font-size: 0.95rem;">
-                                Question 1/15
-                            </span>
-                            <button id="btn-next" class="btn-organic" onclick="nextQuestion()">
-                                <span>Next →</span>
-                            </button>
+                            <div class="commentary" id="score-commentary">Review the concepts tabs and try again when ready.</div>
+                            <button class="btn-organic" style="margin-top: 1rem;" onclick="resetQuiz()">Reset quiz</button>
                         </div>
                     </div>
+                </div>
+            </section>
 
-                    <!-- Elegant Assessment Final Screen -->
-                    <div id="results-container" class="results-box">
-                        <div style="font-family: 'Fraunces', serif; font-size: 2.4rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem; letter-spacing: -0.02em;">
-                            Assessment Complete
-                        </div>
-                        <p style="color: var(--muted-foreground); margin: 0;">You have successfully completed the architectural checkup.</p>
-                        
-                        <div class="score-display-ring">
-                            <span class="score-num" id="final-score">0/15</span>
-                            <span class="score-label">Correct</span>
-                        </div>
-
-                        <div class="commentary" id="score-commentary">
-                            Review the core domains and retry whenever you are ready.
-                        </div>
-
-                        <button class="btn-organic" style="margin-top: 1rem;" onclick="resetQuiz()">
-                            🔄 Reset Assessment
+            <section id="study-sec" class="learn-section learn-section--block" aria-labelledby="study-heading">
+                <h2 id="study-heading" class="learn-block-title">Study tools</h2>
+                <div class="organic-card card-span organic-card--content">
+                    <h3 class="section-title" style="margin-bottom: 0.25rem;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect width="18" height="14" x="3" y="5" rx="2"/><path d="M3 10h18"/></svg>
+                        Flashcards
+                    </h3>
+                    <p style="color: var(--muted-foreground); margin: 0 0 0.5rem; font-size: 1rem;">Click or press Enter to flip.</p>
+                    <div class="flashcard-grid">
+                        <button type="button" class="flashcard" onclick="toggleFlashcard(this)" onkeydown="flashcardKey(event, this)">
+                            <div class="flashcard__inner">
+                                <div class="flashcard__face flashcard__face--front">
+                                    <span class="flashcard__label">Term</span>
+                                    <span class="flashcard__term">Clean Architecture purpose</span>
+                                </div>
+                                <div class="flashcard__face flashcard__face--back">
+                                    <span class="flashcard__label">Definition</span>
+                                    <p style="margin: 0;">Managing dependency direction so inner domain logic has zero dependencies on database infrastructure, frameworks, or external UI components.</p>
+                                </div>
+                            </div>
+                        </button>
+                        <button type="button" class="flashcard" onclick="toggleFlashcard(this)" onkeydown="flashcardKey(event, this)">
+                            <div class="flashcard__inner">
+                                <div class="flashcard__face flashcard__face--front">
+                                    <span class="flashcard__label">Term</span>
+                                    <span class="flashcard__term">Vertical Slice core focus</span>
+                                </div>
+                                <div class="flashcard__face flashcard__face--back">
+                                    <span class="flashcard__label">Definition</span>
+                                    <p style="margin: 0;">Organizing software around business features and vertical capabilities rather than horizontal technical layers (UI, Business Logic, Data Access).</p>
+                                </div>
+                            </div>
+                        </button>
+                        <button type="button" class="flashcard" onclick="toggleFlashcard(this)" onkeydown="flashcardKey(event, this)">
+                            <div class="flashcard__inner">
+                                <div class="flashcard__face flashcard__face--front">
+                                    <span class="flashcard__label">Term</span>
+                                    <span class="flashcard__term">Common / Core folder</span>
+                                </div>
+                                <div class="flashcard__face flashcard__face--back">
+                                    <span class="flashcard__label">Definition</span>
+                                    <p style="margin: 0;">Centralized area for shared domain entities, cross-cutting infrastructure, and global database context — avoids duplicating business logic across slices.</p>
+                                </div>
+                            </div>
+                        </button>
+                        <button type="button" class="flashcard" onclick="toggleFlashcard(this)" onkeydown="flashcardKey(event, this)">
+                            <div class="flashcard__inner">
+                                <div class="flashcard__face flashcard__face--front">
+                                    <span class="flashcard__label">Term</span>
+                                    <span class="flashcard__term">Modular monolith</span>
+                                </div>
+                                <div class="flashcard__face flashcard__face--back">
+                                    <span class="flashcard__label">Definition</span>
+                                    <p style="margin: 0;">Distinct, autonomous modules based on business capabilities within a single deployable unit or mono-repository.</p>
+                                </div>
+                            </div>
+                        </button>
+                        <button type="button" class="flashcard" onclick="toggleFlashcard(this)" onkeydown="flashcardKey(event, this)">
+                            <div class="flashcard__inner">
+                                <div class="flashcard__face flashcard__face--front">
+                                    <span class="flashcard__label">Term</span>
+                                    <span class="flashcard__term">Microservices operational tax</span>
+                                </div>
+                                <div class="flashcard__face flashcard__face--back">
+                                    <span class="flashcard__label">Definition</span>
+                                    <p style="margin: 0;">Complexity from managing distributed networks, eventual consistency, deployment pipelines, and remote debugging across separate services.</p>
+                                </div>
+                            </div>
                         </button>
                     </div>
 
+                    <h3 class="section-title" style="margin-top: 2.5rem;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01"/></svg>
+                        Reflection
+                    </h3>
+                    <ol class="reflection-list">
+                        <li><strong>Feature organization vs. dependency management:</strong> Feature organization is where files live and how intuitive navigation is to a complete use case. Dependency management is compile-time reference rules (e.g. Core must not reference Entity Framework). You can have great feature organization while violating dependency rules.</li>
+                        <li><strong>Shared DB context in vertical slices:</strong> Why not duplicate domain models and DB context in every slice? Central shared infrastructure ensures consistency; duplicating database logic per slice causes maintenance fatigue and architectural drift.</li>
+                        <li><strong>Minimal Clean as middle ground:</strong> Classic Clean used multi-project boundaries; Minimal Clean collapses into fewer projects and enforces boundaries via namespaces, folder scoping, or dependency checkers instead.</li>
+                        <li><strong>Microservices as anti-pattern:</strong> When strong module boundaries and public contracts are the goal, network-isolated microservices add latency, failure points, and serialization cost — a modular monolith achieves the same decoupling in-process.</li>
+                        <li><strong>Architecture for LLM tools:</strong> High code locality (endpoints, validators, commands, mappings in cohesive feature folders) gives humans and AI agents immediate context. Structural consistency across modules helps LLMs generate accurate code without hallucinated layouts.</li>
+                    </ol>
                 </div>
             </section>
 
@@ -500,7 +251,7 @@
 
         <footer>
             <div class="footer-content">
-                <p>Designed on the principles of **Wabi-Sabi** — embracing organic asymmetric curves, peaceful whitespace rhythms, and tactile physical feedback.</p>
+                <p>Study notes derived from <a href="https://www.youtube.com/watch?v=Z0JpNexRxvs" style="color: var(--primary);">Steve Smith&rsquo;s Clean Architecture video</a>. Organic layout — soft curves, grain texture, gentle motion.</p>
             </div>
         </footer>
     </div>
