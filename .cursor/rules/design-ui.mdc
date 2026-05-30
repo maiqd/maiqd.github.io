@@ -1,35 +1,42 @@
 ---
-description: Hand-drawn design system — apply when designing or styling UI
+description: Organic / Natural design system — apply when designing or styling UI
 globs: _sass/**/*,_includes/**/*.html,_layouts/**/*.html,assets/css/**/*,index.html,design/**/*
 alwaysApply: false
 ---
 
-# Hand-drawn UI design (scoped)
+# Organic / Natural UI (scoped)
 
 **Source of truth:** `design/design-system.md`
 
-**Stack:** Jekyll site — SCSS in `_sass/`, markup in `_includes/` and `_layouts/`, entry `index.html`. Map tokens to SCSS variables; do not introduce React/Tailwind unless the user asks to migrate.
+**Stack:** Jekyll — SCSS in `_sass/`, markup in `_includes/` and `_layouts/`. Map tokens to SCSS variables/mixins; match existing partials and skins. Do not add React/Tailwind unless the user requests a migration.
 
-## When this rule applies
+## When this applies
 
-- Designing, styling, or refactoring visual UI (layout, typography, color, motion, components)
-- User explicitly asks for hand-drawn / design-system work
+- Designing, styling, or refactoring visual UI
+- User asks for design system / organic / natural look
 
-**Do not apply** to `_config.yml`, content-only edits, analytics, build tooling, or non-visual changes.
+**Do not apply** to `_config.yml`, content-only edits, analytics, build tooling, or non-visual work.
 
 ## Non-negotiables
 
-- Wobbly borders: irregular `border-radius` (multiple values), not uniform `rounded-*` alone
-- Hard offset shadows: `4px 4px 0px #2d2d2d` — no soft blur shadows
-- Colors: paper `#fdfbf7`, pencil `#2d2d2d`, muted `#e5e0d8`, accent `#ff4d4d`, pen `#2d5da1`
-- Fonts: Kalam (headings), Patrick Hand (body)
-- Playful rotation (`-2deg` to `2deg`), dashed borders for secondary elements
-- Mobile-first; hide heavy decorations on small screens (`hidden md:block`)
-- Accessibility: touch targets ≥ 48px, contrast, focus states (blue ring, wobbly border)
+- **Vibe:** Wabi-sabi — warm, soft, tactile; no sharp 90° corners or pure-black shadows
+- **Colors:** `#FDFCF8` bg, `#2C2C24` fg, `#5D7052` primary, `#C18C5D` secondary, `#E6DCCD` accent, `#F0EBE5` muted, `#DED8CF` border, `#A85448` destructive
+- **Typography:** Fraunces 600–800 (headings), Nunito or Quicksand (body)
+- **Shapes:** `rounded-2xl`/`rounded-3xl` base; organic blobs via multi-value `border-radius` (e.g. `60% 40% 30% 70% / 60% 30% 70% 40%`)
+- **Shadows:** Soft, tinted — moss `rgba(93,112,82,0.15)`, clay `rgba(193,140,93,0.2)` — never `#000` drop shadows
+- **Texture:** Global grain/noise overlay ~3–4% opacity, `mix-blend-mode: multiply`
+- **Motion:** Gentle `transition-all duration-300`–`500`; buttons `hover:scale-105` / `active:scale-95`; cards lift `hover:-translate-y-1`
+- **A11y:** 48px touch targets; `focus-visible:ring-2` moss `#5D7052` with offset
+
+## Components (SCSS mapping)
+
+- **Buttons:** Pill (`border-radius: 9999px`); primary moss + pale mist text; outline terracotta 2px; ghost moss text + moss/10 hover
+- **Cards:** `#FEFEFA` bg, timber border 50% opacity, `2rem` radius + asymmetric corner variants, moss soft shadow, noise layer
+- **Inputs:** Pill, timber border, `rgba(255,255,255,0.5)` bg, moss focus ring
+- **Nav:** Sticky floating pill, `rgba(255,255,255,0.7)` + backdrop blur, `rounded-full`
 
 ## Workflow
 
-1. Read existing `_sass/` partials and skin before changing styles
-2. Propose a short plan (tokens → partials → includes)
-3. Match existing file structure and naming; keep diffs minimal
-4. Prefer deliberate, human sketch aesthetic over generic Bootstrap polish
+1. Read `_sass/` partials and active skin before editing
+2. Plan: tokens → partials → includes
+3. Use blob backgrounds, staggered grids, section tints (stone/sand/moss/terracotta) for depth — avoid generic Bootstrap polish

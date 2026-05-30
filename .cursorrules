@@ -1,22 +1,22 @@
 # Cursor — UI design only
 
-Apply these instructions **only** when designing, styling, or building visual UI for this site.
+Apply **only** when designing, styling, or building visual UI for this site.
 
 **Do not apply** for config, content, analytics, scripts, or non-visual edits.
 
 ## Activation
 
 - User asks to design UI, apply the design system, or change look and feel
-- You are editing: `_sass/**`, `_includes/**`, `_layouts/**`, `assets/css/**`, `index.html`, `design/**`
+- Editing: `_sass/**`, `_includes/**`, `_layouts/**`, `assets/css/**`, `index.html`, `design/**`
 
 ## Source of truth
 
-Read `design/design-system.md` before proposing UI changes.
+Read `design/design-system.md` before UI changes. Style: **Organic / Natural** (wabi-sabi, earth palette, soft shadows, grain texture).
 
 ## Stack
 
-Jekyll + SCSS + HTML includes. Map design tokens to SCSS; match existing partials (`_sass/_base.scss`, skins, etc.).
+Jekyll + SCSS + HTML includes. Map tokens to SCSS; match `_sass/_base.scss` and skins.
 
 ## File-scoped rule
 
-When working in UI paths, also follow `.cursor/rules/design-ui.mdc` (auto-attached via globs). Use @Codebase on `_sass/`, `_includes/`, and `_layouts/` for component context.
+Follow `.cursor/rules/design-ui.mdc` on UI paths (auto-attached via globs). Use @Codebase on `_sass/`, `_includes/`, `_layouts/` for component context.

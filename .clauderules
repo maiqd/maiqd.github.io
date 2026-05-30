@@ -4,26 +4,29 @@ Apply **only** when designing, styling, or refactoring visual UI for this Jekyll
 
 ## Do not apply when
 
-- Editing `_config.yml`, post/content data, analytics, or build scripts
-- Answering general questions unrelated to look and feel
+- Editing `_config.yml`, content data, analytics, or build scripts
+- Non-visual questions
 
 ## Source of truth
 
-`design/design-system.md` — read before UI changes.
+`design/design-system.md` — **Organic / Natural** style (wabi-sabi, earth palette).
 
 ## Project knowledge (Claude Projects)
 
-Upload to Project Knowledge:
+Upload:
 
 1. `design/design-system.md`
-2. `design/claude-project-knowledge.md` (condensed reference)
+2. `design/claude-project-knowledge.md`
 
 ## Stack
 
-SCSS (`_sass/`), HTML includes (`_includes/`, `_layouts/`), `index.html`. Map tokens to SCSS; match existing partials and skins.
+SCSS (`_sass/`), HTML includes (`_includes/`, `_layouts/`). Map tokens to SCSS; match partials and skins.
 
-## Hand-drawn essentials
+## Essentials
 
-- Wobbly multi-value `border-radius`; hard `4px 4px 0px` shadows (no blur)
-- Colors: `#fdfbf7`, `#2d2d2d`, `#e5e0d8`, `#ff4d4d`, `#2d5da1`
-- Fonts: Kalam + Patrick Hand; playful rotation; mobile-first with hidden desktop decorations
+- Palette: rice paper `#FDFCF8`, loam `#2C2C24`, moss `#5D7052`, clay `#C18C5D`, sand `#E6DCCD`, timber `#DED8CF`
+- Fraunces + Nunito/Quicksand; soft moss/clay shadows (not black, not hard offset)
+- Grain texture overlay; organic blob radii; pill buttons/inputs
+- Gentle motion: scale/lift hover, `active:scale-95` on buttons
+- Blob washes, asymmetric cards, section background alternation
+- Mobile-first; 48px touch targets; moss focus ring

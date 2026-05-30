@@ -9,16 +9,16 @@ Apply **only** when designing, styling, or building visual UI.
 
 ## Do not apply
 
-Config, content-only, analytics, or non-visual code paths.
+Config, content-only, analytics, or non-visual paths.
 
 ## Source of truth
 
-`design/design-system.md`
+`design/design-system.md` — Organic / Natural (wabi-sabi).
 
 ## Stack
 
-Jekyll + SCSS + HTML includes. Tokens → SCSS variables in `_sass/`; preserve existing skin/partial structure.
+Jekyll + SCSS + HTML includes. Tokens → `_sass/` variables; preserve skin/partial structure.
 
 ## Constraints
 
-Wobbly borders, hard offset shadows, hand-drawn palette and fonts, rotation and dashed accents, responsive decorative hiding, 48px touch targets. See design doc for component patterns (buttons, cards, inputs).
+Earth palette, Fraunces/Nunito, soft tinted shadows, grain texture, organic blob radii, pill components, glass nav pill, blob backgrounds, gentle 300–500ms transitions, section `py-32` + varied max-widths. See design doc for buttons, cards, inputs, layout, responsive, and accessibility.

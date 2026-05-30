@@ -1,36 +1,48 @@
-# Claude Project Knowledge — Hand-drawn UI (condensed)
+# Claude Project Knowledge — Organic / Natural UI (condensed)
 
 Upload with `design/design-system.md` for UI design sessions only.
 
 ## Scope
 
-Use for styling, layout, components, and visual refactors — not for site config or content edits.
+Styling, layout, components, visual refactors — not config or content-only edits.
 
 ## Stack
 
 Jekyll: `_sass/*.scss`, `_includes/*.html`, `_layouts/*.html`.
 
-## Tokens
+## Style
 
-| Role | Value |
-|------|-------|
-| Background | `#fdfbf7` |
-| Foreground | `#2d2d2d` |
-| Muted | `#e5e0d8` |
-| Accent | `#ff4d4d` |
-| Pen | `#2d5da1` |
+**Organic / Natural** — wabi-sabi, earth-drawn palette, soft tinted shadows, grain texture, blob shapes, gentle motion.
 
-**Fonts:** Kalam 700 (headings), Patrick Hand 400 (body)
+## Colors
+
+| Token | Hex |
+|-------|-----|
+| background | `#FDFCF8` |
+| foreground | `#2C2C24` |
+| primary (moss) | `#5D7052` |
+| primary-foreground | `#F3F4F1` |
+| secondary (clay) | `#C18C5D` |
+| accent (sand) | `#E6DCCD` |
+| muted | `#F0EBE5` |
+| muted-foreground | `#78786C` |
+| border | `#DED8CF` |
+| destructive | `#A85448` |
+
+**Fonts:** Fraunces 600–800 (headings), Nunito or Quicksand (body)
 
 ## Must-haves
 
-- Irregular `border-radius` (e.g. `255px 15px 225px 15px / 15px 225px 15px 255px`)
-- Shadow: `4px 4px 0px 0px #2d2d2d` (hover: reduce offset; active: none + translate)
-- Paper texture: radial-gradient dots, 24px grid
-- Rotation -2° to 2° on cards; `border-dashed` for secondary UI
-- Buttons: white → red fill on hover; secondary uses muted → blue
-- Mobile: `hidden md:block` for arrows, squiggles, bouncing decor
+- No pure-black shadows; use moss/clay tinted soft shadows
+- Grain overlay on body: ~3–4% opacity, `mix-blend-mode: multiply`
+- Organic `border-radius` blobs + generous `rounded-2xl`/`3xl`
+- Pill buttons/cards/inputs; primary moss, outline terracotta
+- Hover: `scale-105` buttons, `-translate-y-1` cards, `rotate-1` testimonials
+- Transitions: `duration-300`–`500`, no harsh snaps
+- Section rhythm: `py-32`, varied max-widths, alternating section tints
+- Blob backgrounds with `blur-3xl`; asymmetric card radii
+- A11y: 48px targets, moss focus ring, AA+ contrast per design doc
 
 ## Full spec
 
-See `design/design-system.md` for buttons, cards, inputs, layout, and responsive tables.
+See `design/design-system.md` for navigation, icons, responsive breakpoints, and layout grids.
