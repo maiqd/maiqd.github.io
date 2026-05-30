@@ -1,6 +1,11 @@
 {
   "articles": [
     {
+      "title": "Hermes Agent + DeepSeek V4",
+      "href": "/learn/hermes-agent-with-deepseek-v4/",
+      "blurb": "Free DeepSeek V4 + Hermes setup, use cases, 8-question quiz, flashcards, and reflection prompts."
+    },
+    {
       "title": "Clean vs. Vertical Slice Architecture",
       "href": "/learn/clean-vs-vertical-slice/",
       "blurb": "Video notes, core principles, timeline checkpoints, and a self-assessment quiz."

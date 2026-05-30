@@ -1,0 +1,139 @@
+    <script>
+        const quizData = [
+            { correctIndex: 1, explanation: "Hermes Agent is built by Nous Research under the MIT License." },
+            { correctIndex: 2, explanation: "Hermes Agent is open-source software governed by the permissive MIT License." },
+            { correctIndex: 2, explanation: "DeepSeek V4 Flash supports a massive 1 million token context window via Nous Portal." },
+            { correctIndex: 1, explanation: "Artificial Analysis ranks DeepSeek V4 Flash at roughly 121 tokens per second — 8th out of 87 models for speed." },
+            { correctIndex: 2, explanation: "Hermes Agent bundles 19+ native toolsets for browser control, file ops, and more." },
+            { correctIndex: 1, explanation: "Run `hermes model` in your terminal to open the interactive provider and model selection menu." },
+            { correctIndex: 2, explanation: "Windows support for Hermes Agent is available but still in active beta testing." },
+            { correctIndex: 1, explanation: "The `/goals` command passes sequential browsing directions to the agent via browser-use." }
+        ];
+
+        let currentQuestionIndex = 0;
+        let selectedAnswers = Array(quizData.length).fill(null);
+        let completed = false;
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+                btn.setAttribute('aria-selected', 'false');
+            });
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            event.target.classList.add('active');
+            event.target.setAttribute('aria-selected', 'true');
+            document.getElementById('tab-' + tabId).classList.add('active');
+        }
+
+        function toggleFlashcard(el) {
+            el.classList.toggle('is-flipped');
+            el.setAttribute('aria-pressed', el.classList.contains('is-flipped'));
+        }
+
+        function flashcardKey(e, el) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleFlashcard(el);
+            }
+        }
+
+        function selectOption(questionIdx, optionIdx) {
+            if (completed) return;
+            selectedAnswers[questionIdx] = optionIdx;
+            const questionElement = document.getElementById(`q-${questionIdx}`);
+            questionElement.querySelectorAll('.option-item').forEach((el, index) => {
+                el.classList.toggle('selected', index === optionIdx);
+            });
+            showExplanation(questionIdx, optionIdx);
+            updateControls();
+        }
+
+        function showExplanation(questionIdx, chosenIdx) {
+            const data = quizData[questionIdx];
+            const isCorrect = chosenIdx === data.correctIndex;
+            const feedbackPanel = document.getElementById('feedback-panel');
+            const feedbackTitle = document.getElementById('feedback-title');
+            const feedbackText = document.getElementById('feedback-text');
+            if (isCorrect) {
+                feedbackTitle.innerHTML = 'Correct';
+                feedbackTitle.style.color = 'var(--primary)';
+                feedbackText.innerText = data.explanation;
+            } else {
+                feedbackTitle.innerHTML = 'Not quite';
+                feedbackTitle.style.color = 'var(--destructive)';
+                feedbackText.innerText = data.explanation;
+            }
+            feedbackPanel.classList.add('show');
+        }
+
+        function updateControls() {
+            document.getElementById('btn-prev').disabled = currentQuestionIndex === 0;
+            document.getElementById('quiz-progress-text').innerText = `Question ${currentQuestionIndex + 1}/${quizData.length}`;
+            document.getElementById('btn-next').innerHTML = currentQuestionIndex === quizData.length - 1
+                ? '<span>Finish</span>'
+                : '<span>Next →</span>';
+        }
+
+        function prevQuestion() {
+            if (currentQuestionIndex === 0) return;
+            document.getElementById(`q-${currentQuestionIndex}`).classList.remove('active');
+            currentQuestionIndex--;
+            document.getElementById(`q-${currentQuestionIndex}`).classList.add('active');
+            const chosen = selectedAnswers[currentQuestionIndex];
+            if (chosen !== null) showExplanation(currentQuestionIndex, chosen);
+            else document.getElementById('feedback-panel').classList.remove('show');
+            updateControls();
+        }
+
+        function nextQuestion() {
+            if (selectedAnswers[currentQuestionIndex] === null) {
+                const feedbackPanel = document.getElementById('feedback-panel');
+                document.getElementById('feedback-title').innerHTML = 'Pick an answer';
+                document.getElementById('feedback-title').style.color = 'var(--destructive)';
+                document.getElementById('feedback-text').innerText = 'Select an option before continuing.';
+                feedbackPanel.classList.add('show');
+                return;
+            }
+            if (currentQuestionIndex < quizData.length - 1) {
+                document.getElementById(`q-${currentQuestionIndex}`).classList.remove('active');
+                currentQuestionIndex++;
+                document.getElementById(`q-${currentQuestionIndex}`).classList.add('active');
+                const chosen = selectedAnswers[currentQuestionIndex];
+                if (chosen !== null) showExplanation(currentQuestionIndex, chosen);
+                else document.getElementById('feedback-panel').classList.remove('show');
+                updateControls();
+            } else {
+                calculateFinalAssessment();
+            }
+        }
+
+        function calculateFinalAssessment() {
+            let score = 0;
+            quizData.forEach((q, i) => { if (selectedAnswers[i] === q.correctIndex) score++; });
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('results-container').classList.add('active');
+            document.getElementById('final-score').innerText = `${score}/${quizData.length}`;
+            const commentaryEl = document.getElementById('score-commentary');
+            const passThreshold = Math.ceil(quizData.length * 0.6);
+            if (score === quizData.length) {
+                commentaryEl.innerText = 'Perfect — you have the Hermes + DeepSeek V4 setup down.';
+            } else if (score >= passThreshold) {
+                commentaryEl.innerText = 'Solid grasp. Skim the setup and use cases tabs for gaps.';
+            } else {
+                commentaryEl.innerText = 'Revisit the overview and video, then retry the quiz.';
+            }
+            completed = true;
+        }
+
+        function resetQuiz() {
+            currentQuestionIndex = 0;
+            selectedAnswers = Array(quizData.length).fill(null);
+            completed = false;
+            document.getElementById('quiz-container').style.display = 'block';
+            document.getElementById('results-container').classList.remove('active');
+            document.getElementById('feedback-panel').classList.remove('show');
+            document.querySelectorAll('.option-item').forEach(el => el.classList.remove('selected'));
+            document.querySelectorAll('.question-box').forEach((box, i) => box.classList.toggle('active', i === 0));
+            updateControls();
+        }
+    </script>

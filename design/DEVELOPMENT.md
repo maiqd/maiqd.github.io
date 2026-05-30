@@ -37,6 +37,7 @@ Output lands in `_site/` (gitignored). Do not commit generated HTML.
 | `src/_includes/nav.njk` | Shared nav partial |
 | `src/_data/siteNav.json` | Site nav links (About, Projects, …) |
 | `src/_data/learnArticles.json` | Learn hub card list |
+| `assets/contents/*.md` | Learn article source notes (sync into `src/` via skill) |
 | `content/cv.yml` | Content draft (manual sync into templates for now) |
 | `design/design-system.md` | Visual spec |
 
@@ -54,6 +55,13 @@ Shared learn UI: `assets/css/learn.css`, `assets/js/learn-nav.js`, `assets/js/le
 **Mermaid diagrams** (learn articles): set `mermaid: true` in article front matter. Wrap charts in `.mermaid-diagram` / `<pre class="mermaid">`.
 
 Add pages under `src/` with `permalink: /your/path/index.html`.
+
+### Learn pages from content files
+
+1. Write study notes to `assets/contents/{slug}.md` (Part 1 analysis + Part 2 quiz/flashcards/reflection).
+2. In Cursor, invoke the **create-learn-page** skill (`.cursor/skills/create-learn-page/SKILL.md`): e.g. *“Create learn page from assets/contents/hermes-agent-with-deepseek.md”*.
+3. Skill generates `src/learn/{slug}/`, body/script includes, and hub card entry.
+4. Verify: `npm run build`
 
 ## Deploy
 
