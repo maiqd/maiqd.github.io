@@ -47,6 +47,7 @@ Output lands in `_site/` (gitignored). Do not commit generated HTML.
 |-----|--------|
 | `/` | `src/index.njk` |
 | `/learn/` | `src/learn/index.njk` |
+| `/learn/hermes-agent-with-deepseek-v4/` | `src/learn/hermes-agent-with-deepseek-v4/index.njk` |
 | `/learn/clean-vs-vertical-slice/` | `src/learn/clean-vs-vertical-slice/index.njk` |
 | `/learn/openclaw-use-cases/` | `src/learn/openclaw-use-cases/index.njk` |
 
@@ -68,6 +69,30 @@ Add pages under `src/` with `permalink: /your/path/index.html`.
 Push to `main`. GitHub Actions runs `npm run build` and publishes `_site/`.
 
 **One-time setup:** Repo **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+
+## SEO / Search Console
+
+Canonical host: `https://datmai.net` (`src/_data/site.json` → `url`).
+
+Build generates:
+
+| File | Source |
+|------|--------|
+| `/robots.txt` | `src/robots.njk` |
+| `/sitemap.xml` | `src/sitemap.xml.njk` (home, `/learn/`, entries from `learnArticles.json`) |
+
+After deploy, verify live:
+
+- `https://datmai.net/robots.txt`
+- `https://datmai.net/sitemap.xml`
+
+**Submit sitemap** (manual, per Search Console property):
+
+1. [Google Search Console](https://search.google.com/search-console) → property `https://datmai.net`
+2. **Sitemaps** → enter `sitemap.xml` → **Submit**
+3. Optional: **URL inspection** → request indexing for `/` and `/learn/`
+
+When adding a learn page, update `src/_data/learnArticles.json` (hub + sitemap stay in sync).
 
 ## Preview without Eleventy
 
